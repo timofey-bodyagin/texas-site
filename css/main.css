@@ -15,7 +15,8 @@ body {
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
-}
+  background-image: url(../images/pattern9.png);
+  }
 h1,
 h2,
 h3,
@@ -50,10 +51,17 @@ hr {
   border-bottom: 1px solid #fff;
 }
 .navbar-inverse .navbar-nav > li > a {
-	color: #000;
+  color: #000008;
+  font-weight: 600;
+  font-size: 16px;
+
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 	text-decoration: underline;
+    color: #FF8283;
+  font-weight: 600;
+  font-size: 16px;
+
 }
 .gradiant {
   background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
@@ -174,10 +182,11 @@ ul.nostyle i {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
-}
+  }
+
 .navbar.navbar-default .navbar-toggle {
   margin-top: 32px;
-}
+  }
 .navbar-header .navbar-brand {
   padding: 0;
   margin-top: -3px;
@@ -188,9 +197,10 @@ ul.nostyle i {
  
 }
 #top-header {
-  padding: 25px 0;
+  padding: 20px 0;
   opacity: .9;
   background: transparent;
+
 }
 
 @media only screen and (min-width: 768px) {
