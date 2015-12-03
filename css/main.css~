@@ -15,7 +15,7 @@ body {
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
-  background-image: url(../images/pattern9.png);
+  background-image: url(../images/29.png);
   }
 h1,
 h2,
@@ -71,7 +71,7 @@ border-radius:0px;
 border-bottom-width: 4px;
 border-bottom-style: solid;
 border-bottom-color: #FF8283;
-    color: #000 !important;
+    color: #FF8283; !important;
   background-color: transparent !important;
 }
 .gradiant {
