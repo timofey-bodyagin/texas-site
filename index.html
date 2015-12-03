@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="software development, software developers, outsourcing, offshore software development, software development company, software development firm, software development services" />
-    <meta name="author" content="fil" >
+    <meta name="author" content="Sergey" >
     <title>spotquoting.com</title>
 	<!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,6 +121,7 @@
 		})(jQuery);
 
 </script>
+
 <script>
 
 $(window).load(function () {
@@ -129,7 +130,7 @@ $(window).load(function () {
         });
         function StockPriceTicker() {
             var Symbol = "", CompName = "", Price = "", ChnageInPrice = "", PercentChnageInPrice = ""; 
-            var CNames = "^FTSE,HSBA.L,SL.L,BATS.L,BLND.L,FLG.L,RBS.L,RMG.L,AAPL";
+            var CNames = "QQQ,SPY,GPRO,TWTR,INTC,FB,TSLA,GOOG,AAPL";
             var flickerAPI = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + CNames + "%22)&env=store://datatables.org/alltableswithkeys";
             var StockTickerHTML = "";
             
@@ -152,7 +153,7 @@ $(window).load(function () {
                     var PriceClass = "GreenText", PriceIcon="up_green";
                     if(parseFloat(ChnageInPrice) < 0) { PriceClass = "RedText"; PriceIcon="down_red"; }
                     StockTickerHTML = StockTickerHTML + "<span class='" + PriceClass + "'>";
-                    StockTickerHTML = StockTickerHTML + "<span class='quote'>" + CompName + " (" + Symbol + ")</span> ";
+                    StockTickerHTML = StockTickerHTML + "<span class='quote'>" + " " + Symbol + "</span> ";
                     
                     StockTickerHTML = StockTickerHTML + parseFloat(Price).toFixed(2) + " ";
                     StockTickerHTML = StockTickerHTML + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(ChnageInPrice)).toFixed(2) + " (";
@@ -163,22 +164,13 @@ $(window).load(function () {
                 $("#dvStockTicker").jStockTicker({interval: 30, speed: 2});
             });
         }
-
-
-
-
-</script>
-
-
-
-
 </script>
 </head><!--/head-->
 <body id="home" class="homepage">
 
 
-    <header id="top-header" class="navbar-inverse navbar-fixed-top" >
-            <div class="container">
+    <header id="top-header" class="navbar-inverse navbar-fixed-top">
+            <div class="container" style="width: 70%">
                 <div class="navbar-header">
                     <!-- responsive nav button -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -191,7 +183,7 @@ $(window).load(function () {
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a class="smooth-scroll" data-section="#home" href="#home" >
+                        <a class="smooth-scroll" data-section="index.html" href="index.html" >
                             <img src="images/logo.png" alt="SPOTQUOTING">
                         </a>
                     </div>
@@ -202,12 +194,12 @@ $(window).load(function () {
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                     <div class="fusion-main-menu">
                         <ul id="nav" class="nav navbar-nav nav-pills">
-                            <li class="scroll"><a href="#home" data-section="#home">Home</a></li>
-                            <li class="scroll"><a href="#about" data-section="#about">Who we are</a></li>
-                            <li class="scroll"><a href="#features" data-section="#features">Patent Portfolio</a></li>
-                            <li class="scroll"><a href="#services" data-section="#services">Management</a></li>
-                            <li class="scroll"><a href="#contact-area" data-section="#contact-area">Contact US</a></li> 
-                            <li class="scroll"><a href="#contact-area" data-section="#contact-area"></a></li> 
+                            <li class="scroll"><a href="index.html" data-section="index.html">Home</a></li>
+                            <li class="scroll"><a href="about.html" data-section="about.html">Who we are</a></li>
+                            <li class="scroll"><a href="patents.html" data-section="patents.html">Patent Portfolio</a></li>
+                            <li class="scroll"><a href="management.html" data-section="management.html">Management</a></li>
+                            <li class="scroll"><a href="contact.html" data-section="contact.html">Contact US</a></li>
+                            <li class="scroll"><a href="contact.html" data-section="contact.html"></a></li>
                             
                         </ul>
                     </div>
@@ -217,11 +209,13 @@ $(window).load(function () {
             </div>
             
         </header>
-        
-  <div id="StockTickerContainer" style="height: 32px; line-height: 32px; overflow: hidden;">
-        <div id='dvStockTicker' class='stockTicker'>
+   <div></div>
+    <section class="section-header" style="width: 65%" >
+  <div id="StockTickerContainer" style="height: 52px; line-height: 42px; overflow: hidden; background: white" style="width:auto">
+        <div id='dvStockTicker' class='stockTicker' >
         </div>
-    </div>      
+  </div>
+   </section>
         
         
 </body>

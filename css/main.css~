@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,100italic,300italic,400italic,700italic);
 /*
-Template Name: Color
-Version: 1.0
-Author: 
+Template Name: Fil104
+Version: 1.1
+Author: fil
 Author URL: 
 */
 /*************************
@@ -16,6 +16,7 @@ body {
   color: #64686d;
   line-height: 26px;
   background-image: url(../images/29.png);
+
   }
 h1,
 h2,
@@ -64,6 +65,7 @@ hr {
 
 }
 .nav-pills > .active > a,
+
 .nav-pills > .active > a:hover,.nav-pills > li > a:hover {
 text-decoration: none;
 font-weight: bold;
@@ -85,7 +87,10 @@ border-bottom-color: #FF8283;
   background-image: -ms-linear-gradient(4deg, #2caab3 0%, #2c8cb3 100%);
 }
 .section-header {
-  margin-bottom: 50px;
+  margin-bottom: 180px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .section-header .section-title {
   margin-bottom: 15px;
@@ -98,9 +103,9 @@ border-bottom-color: #FF8283;
   color: #262f32;
   text-transform: uppercase;
 
+
 }
 .section-header p {
-    display: block;
   clear: both;
   font-size: 16px;
   line-height: 28px;
@@ -193,6 +198,7 @@ ul.nostyle i {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+
   }
 
 .navbar.navbar-default .navbar-toggle {
@@ -201,6 +207,7 @@ ul.nostyle i {
 .navbar-header .navbar-brand {
   padding: 0;
   margin-top: -3px;
+  
 }
 .navbar-header .navbar-brand a {
   height: auto;
@@ -208,7 +215,7 @@ ul.nostyle i {
  
 }
 #top-header {
-  padding: 20px 0;
+  padding: 25px 0px;
   opacity: .9;
   background: transparent;
 
@@ -723,3 +730,77 @@ ul.nostyle i {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+/***********************
+********* Stock Ticker **
+************************/
+
+div.stockTicker
+		{
+			font-weight: normal;
+			font-size: 15px;
+			list-style-type: none;
+			margin: 0px;
+			padding: 0;
+			position: relative;
+
+		}
+div.stockTicker span.quote
+		{
+			margin: 0px;
+			font-weight: lighter;
+			color: #000;
+			padding: 0 25px 0 10px;
+		}
+.GreenText
+		{
+			color: Green;
+		}
+.RedText
+		{
+			color: Red;
+		}
+.up_green
+		{
+			background: url(http://www.codescratcher.com/wp-content/uploads/2014/11/up.gif) no-repeat left center;
+
+			padding-left: 10px;
+			margin-right: 5px;
+		}
+.down_red
+		{
+			background: url(http://www.codescratcher.com/wp-content/uploads/2014/11/down.gif) no-repeat left center;
+			padding-left: 10px;
+			margin-right: 5px;
+		}
+#img1 {
+
+	margin-top: 40px;
+	margin-left: auto;
+   margin-right: auto;
+   width: 70%;
+
+}	
+#img2 {
+
+	margin-top: 40px;
+	margin-left: auto;
+   margin-right: auto;
+   width: 70%;
+
+}	
+#img3 {
+
+	margin-top: 40px;
+	margin-left: auto;
+   margin-right: auto;
+   width: 70%;
+
+}	
+#about {
+   font-size: 10px; 
+	margin-top: 0px;
+	margin-left: auto;
+   margin-right: auto;
+   width: 70%;
+
+}	
