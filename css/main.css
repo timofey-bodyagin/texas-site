@@ -723,3 +723,41 @@ ul.nostyle i {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
+
+div.stockTicker
+		{
+			font-size: 18px;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+		div.stockTicker span.quote
+		{
+			margin: 0;
+			font-weight: bold;
+			color: #000;
+			padding: 0 5px 0 10px;
+		}
+		.GreenText
+		{
+			color: Green;
+		}
+		.RedText
+		{
+			color: Red;
+		}
+		.up_green
+		{
+			background: url(http://www.codescratcher.com/wp-content/uploads/2014/11/up.gif) no-repeat left center;
+			padding-left: 10px;
+			margin-right: 5px;
+		}
+		.down_red
+		{
+			background: url(http://www.codescratcher.com/wp-content/uploads/2014/11/down.gif) no-repeat left center;
+			padding-left: 10px;
+			margin-right: 5px;
+		}
+		
