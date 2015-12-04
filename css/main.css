@@ -216,8 +216,8 @@ ul.nostyle i {
 }
 #top-header {
   padding: 25px 0px;
-  opacity: .9;
-  background: transparent;
+  opacity: 1.0;
+  background-image: url(../images/29.png);
 
 }
 
