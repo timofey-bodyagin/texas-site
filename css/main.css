@@ -12,7 +12,7 @@ body {
   padding-top: 70px;
   background: #fff;
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+
   color: #64686d;
   line-height: 26px;
   background-image: url(../images/29.png);
@@ -91,6 +91,7 @@ border-bottom-color: #FF8283;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
+  width: 70%;
 }
 .section-header .section-title {
   margin-bottom: 15px;
@@ -777,7 +778,7 @@ div.stockTicker span.quote
 	margin-top: 40px;
 	margin-left: auto;
    margin-right: auto;
-   width: 70%;
+   width: 80%;
 
 }	
 #img2 {
@@ -785,7 +786,7 @@ div.stockTicker span.quote
 	margin-top: 40px;
 	margin-left: auto;
    margin-right: auto;
-   width: 70%;
+   width: 80%;
 
 }	
 #img3 {
@@ -793,14 +794,34 @@ div.stockTicker span.quote
 	margin-top: 40px;
 	margin-left: auto;
    margin-right: auto;
-   width: 70%;
+   width: 80%;
 
 }	
 #about {
-   font-size: 6px; 
+  font-size: 8pt;
+  font-family: 'Roboto', sans-serif;
 	margin-top: 0px;
 	margin-left: auto;
    margin-right: auto;
-   width: 70%;
+   width: 80%;
+
+}
+#about
+{
+  font-size:4pt;
+  font-family:'Roboto', sans-serif;
+  font-weight: lighter;
+
+  color:black;
+}
+#notes {
+	margin-top: 40px;
+	margin-left: 150px;
+   margin-right: auto;
+   width: 30%;
+   font-size:8pt;
+  font-family:'Roboto', sans-serif;
+  font-weight: normal;
+  color:black;
 
 }	
