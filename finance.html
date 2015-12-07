@@ -51,7 +51,31 @@ function popup(mylink, windowname)
 
 <link rel="stylesheet" href="responsive-tables.css">
 <script src="stylesheet" href="responsive-tables.js"></script>
-
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".flip").click(function() {
+			$(".panel").slideToggle("slow");
+		});
+	});
+</script>
+ 
+<style type="text/css">
+div.panel,p.flip {
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	background: #ddd;
+	border: solid 1px #fff;
+}
+ 
+div.panel {
+	widht: 50%;
+	height: 100px;
+	display: none;
+}
+</style>
 </head><!--/head-->
 <body id="home" class="homepage">
 
@@ -102,6 +126,38 @@ function popup(mylink, windowname)
     <img class="img-responsive" src="../images/fin1.png" alt="Finance" />
 </div>
  </section>  
+	<div class="panel">
+		<table border="1">
+<tr>
+<td>
+<center>
+<H4>SOLD</H4>
+<h4>21,300 AAPL Shares</h4>
+<h4>109.00<h4>
+</center>
+</td>
+</tr>
+</table>
+<table border="1">
+<tr>
+<td>
+<center>
+<H4>SOLD</H4>
+<h4>21,300 AAPL Shares</h4>
+<h4>109.00<h4>
+</center>
+</td>
+</tr>
+</table>
+	</div>
+ 
+	<br>
+	<p class="flip">Click here to Show/Hide Panel</p>
+ 
+	<br>
+	<br>
+	
+
  <section id="img2">
 <div id="container">
 <center><h4>Spot quotes market making quotes</h4></center>
@@ -121,7 +177,7 @@ function popup(mylink, windowname)
 					</tr>
                 </thead>
 					<tr>
-						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>AAL</a></font></a></td>
+						<td><p class="flip"><font color=blue>AAL</a></font></p></td>
 						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>American Airlines Group Inc</font></a></td>
 						<td>44.97</td>
 						<td>44.97</td>
@@ -203,7 +259,7 @@ function popup(mylink, windowname)
 If we were live thee would be actual quotes making by our Market Making Department
 determined by our algorithm  that would allow us to make a small profit.Any profits made will 
 be allocated into making our quotes even large initially. We will not charge any Assess Fees toliftor hit our quotes
- from our ATS initially. Quotes colored red means over 100% greater size
+ from our ATS initially. Quotes coloured red means over 100% greater size
 than what was available at the NBBO. Market simulated with last Week's Data.
 
 </div>

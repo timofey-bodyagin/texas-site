@@ -30,9 +30,12 @@ h6 {
 }
 
 p {
-    font-size: 18px;
     line-height: 24px;
     font-weight: 300;
+    font-family:'Roboto', sans-serif;
+    font-weight: normal;
+    color:black;
+    font-size:9pt;
 }
 a {
   color: #72C05B;
