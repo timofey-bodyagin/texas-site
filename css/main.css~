@@ -26,7 +26,7 @@ h5,
 h6 {
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
-  color: #272727;
+  color: grey;
 }
 
 p {
@@ -34,8 +34,8 @@ p {
     font-weight: 300;
     font-family:'Roboto', sans-serif;
     font-weight: normal;
-    color:black;
-    font-size:9pt;
+    color:grey;
+    font-size:10pt;
 }
 a {
   color: #72C05B;
@@ -454,8 +454,8 @@ ul.nostyle i {
 ************************/
 #footer {
   padding-top: 20px;
-  color: #fff;
-  background: #2e2e2e;
+  color: white;
+  background: black;
 }
 #footer a {
   color: #fff;
@@ -473,7 +473,7 @@ ul.nostyle i {
   margin: 0 7.5px;
 }
 #footer p.text-center {
-	font-size: 14px;
+	font-size: 16px;
 }
 @media only screen and (min-width: 768px) {
   #footer .social-icons {
@@ -622,21 +622,21 @@ width: 75%;
 }
 #col1 {
 	float:left;
-	width:50%;
+	width:60%;
 	position:relative;
 	left:68.67%;
 	overflow:hidden;
 }
 #col2 {
 	float:left;
-	width:25%;
+	width:20%;
 	position:relative;
 	left:72.67%;
 	overflow:hidden;
 }
 #col3 {
 	float:left;
-	width:25%;
+	width:20%;
 	position:relative;
 	left:76.67%;
 	overflow:hidden;
