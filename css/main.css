@@ -95,7 +95,7 @@ border-bottom-color: #FF8283;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 75%;
 }
 .section-header .section-title {
   margin-bottom: 15px;
@@ -531,15 +531,15 @@ div.stockTicker span.quote
 	margin-top: 40px;
 	margin-left: auto;
    margin-right: auto;
-   width: 60%;
+   width: 75%;
 
 }	
 #img2 {
 
-	margin-top: 40px;
+	margin-top: 50px;
 	margin-left: auto;
    margin-right: auto;
-   width: 60%;
+   width:75%;
 
 }	
 #img3 {
@@ -547,7 +547,7 @@ div.stockTicker span.quote
 	margin-top: 40px;
 	margin-left: auto;
    margin-right: auto;
-   width: 60%;
+   width: 75%;
 
 }	
 #about {
@@ -556,7 +556,7 @@ div.stockTicker span.quote
 	margin-top: 0px;
 	margin-left: auto;
    margin-right: auto;
-   width: 60%;
+   width: 75%;
 
 }
 #about
@@ -575,22 +575,22 @@ div.stockTicker span.quote
 margin-top: 40px;
 	margin-left: auto;
    margin-right: auto;
-   width: 60%;
+   width: 75%;
   color:black;
 }
 #notes {
 	margin-top: 40px;
-	margin-left: 390px;
+	margin-left: 200px;
    margin-right: auto;
-   width: 30%;
-   font-size:8pt;
+   width: 40%;
+   font-size:9pt;
   font-family:'Roboto', sans-serif;
   font-weight: normal;
   color:black;
 
 }
 #head {
-width: 60%;
+width: 75%;
 
 }	
 
@@ -622,21 +622,21 @@ width: 60%;
 }
 #col1 {
 	float:left;
-	width:29.33%;
+	width:60%;
 	position:relative;
 	left:68.67%;
 	overflow:hidden;
 }
 #col2 {
 	float:left;
-	width:29.33%;
+	width:20%;
 	position:relative;
 	left:72.67%;
 	overflow:hidden;
 }
 #col3 {
 	float:left;
-	width:29.33%;
+	width:20%;
 	position:relative;
 	left:76.67%;
 	overflow:hidden;

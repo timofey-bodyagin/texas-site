@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="software development, software developers, outsourcing, offshore software development, software development company, software development firm, software development services" />
-    <meta name="author" content="fil" >
+    <meta name="author" content="Sergey" >
     <title>spotquoting.com</title>
 	<!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -76,7 +76,34 @@ div.panel {
 	display: none;
 }
 </style>
-
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#moveleft').click(function() {
+        $('#textbox').animate({
+        'marginLeft' : "-=30px" //moves left
+        });
+    });
+    $('.moveright').click(function() {
+    $('#textbox').animate({
+        'marginLeft' : "0px" //moves left
+        });
+        $('#textbox').animate({
+        'marginLeft' : "+=70%" //moves right
+        });
+        
+    });
+    $('#movedown').click(function() {
+        $('#textbox').animate({
+        'marginTop' : "+=30px" //moves down
+        });
+    });
+    $('#moveup').click(function() {
+        $('#textbox').animate({
+        'marginTop' : "-=30px" //moves up
+        });
+    });
+});
+</script>
 </head><!--/head-->
 <body id="home" class="homepage">
 
@@ -135,41 +162,43 @@ div.panel {
 		<div id="container1">
 			<div id="col1">
 				<!-- Column one start -->
-				<table border="2" bordercolor="#000033">
-		<tr>
-		<td>
-		<center>
-		<H4>SOLD</H4>
-		<h4>21,300 AAPL Shares</h4>
-		<h4>109.00<h4>
-		</center>
-		</td>
-		</tr>
-		</table>
-		<br>
-		<table border="2" bordercolor="#000033">
-		<tr>
-		<td>
-		<center>
-		<H4>SOLD</H4>
-		<h4>21,300 AAPL Shares</h4>
-		<h4>109.00<h4>
-		</center>
-		</td>
-		</tr>
-		</table>
-				
+				<div id="textbox">
+				<p><table border="2" bordercolor="#000033">
+                <tr>
+                <td>
+                <center>
+                <H4>SOLD</H4>
+                <h4>21,300 AAPL Shares</h4>
+                <h4>109.00<h4>
+                </center>
+                </td>
+                </tr>
+                </table>
+                <br>
+                <table border="2" bordercolor="#000033">
+                <tr>
+                <td>
+                <center>
+                <H4>SOLD</H4>
+                <h4>21,300 AAPL Shares</h4>
+                <h4>109.00<h4>
+                </center>
+                </td>
+                </tr>
+                </table></p>
+				</div>
 				<!-- Column one end -->
 			</div>
 			<div id="col2">
 				<!-- Column two start -->
-				<h2>No Images</h2>
-				
+
+				<p></p>
 				<!-- Column two end -->
 			</div>
 			<div id="col3">
 				<!-- Column three start -->
-				<h2>Cross-Browser Compatible</h2>
+				
+				<h2></h2>
 				
 				<!-- Column three end -->
 			</div>
@@ -197,8 +226,8 @@ div.panel {
 					</tr>
                 </thead>
 					<tr>
-						<td><a class="flip"><font color=blue>AAL</a></font></a></td>
-						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>American Airlines Group Inc</font></a></td>
+						<td><a class="moveright"><font color=blue>AAL</font></a></td>
+						<td><a class="moveright"><font color=blue>American Airlines Group Inc</font></a></td>
 						<td>44.97</td>
 						<td>44.97</td>
 						<td>44.97</td>
@@ -206,8 +235,8 @@ div.panel {
 
 					</tr>
 					<tr>
-						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>AAPL</font></a></td>
-						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Apple Inc</font></a></td>
+						<td><a class="moveright"><font color=blue>AAPL</font></a></td>
+						<td><a class="moveright"><font color=blue>Apple Inc</font></a></td>
 						<td>109.67</td>
 						<td>44.97</td>
 						<td>44.97</td>
@@ -215,53 +244,98 @@ div.panel {
 
 					</tr>
 					<tr>
-						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>ADBE</font></a></td>
-						<td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Adobe System Incorporated</a></font></td>
+						<td><a class="moveright"><font color=blue>ADBE</font></a></td>
+						<td><a class="moveright">><font color=blue>Adobe System Incorporated</a></font></td>
 						<td>44.97</td>
-						<td>44.97</td>
+						<td>21.300</td>
 						<td>44.97</td>
 						<td>44.97</td>
 
 					</tr>
 					<tr>
-						<td><font color=blue>ADP</font></a></td>
-						<td><font color=blue>Automatic Data Processing</font></a></td>
+						<td><a class="moveright"><font color=blue>ADP</font></a></td>
+						<td><a class="moveright"><font color=blue>Automatic Data Processing</font></a></td>
 						<td>44.97</td>
-						<td>44.97</td>
+						<td>21.300</td>
 						<td>44.97</td>
 						<td>44.97</td>
 
 					</tr>
                       <tr>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>ADSK</font></a></td>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Autodesk Inc</a></font></td>
+                          <td><a class="moveright"><font color=blue>ADSK</font></a></td>
+                          <td><a class="moveright"><font color=blue>Autodesk Inc</a></font></td>
+                          <td>44.97</td>
+                          <td>21.300</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+
+                      </tr>
+                      <tr>
+                          <td><a class=="moveright"><font color=blue>AKAM</font></a></td>
+                          <td><a class=="moveright"><font color=blue>Akamai Technologies</a></font></td>
+                          <td>44.97</td>
+                          <td>21.300</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+
+                      </tr>
+                      <tr>
+                          <td><a class=="moveright"><font color=blue>ALXN</font></a></td>
+                          <td><a class=="moveright"><font color=blue>Alexion Pharmaceuticals</font></a></td>
+                          <td>44.97</td>
+                          <td>21.300</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+
+                      </tr>
+                      <tr>
+                          <td><a class="moveright"><font color=blue>AMAT</font></a></td>
+                          <td><a class="moveright"><font color=blue>Applied Materials</a></font></td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
 
                       </tr>
-                      <tr>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>AKAM</font></a></td>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Akamai Technologies</a></font></td>
+                         <tr>
+                          <td><a class="moveright"><font color=blue>AMGN</font></a></td>
+                          <td><a class="moveright"><font color=blue>Amgen Inc.</a></font></td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
 
                       </tr>
-                      <tr>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>ALXN</font></a></td>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Alexion Pharmaceuticals</font></a></td>
+                                            <tr>
+                          <td><a class="moveright"><font color=blue>AMZN</font></a></td>
+                          <td><a class="moveright"><font color=blue>Amazon.com, Inc.  </a></font></td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
 
                       </tr>
-                      <tr>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>AMAT</font></a></td>
-                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Applied Materials</a></font></td>
+                                            <tr>
+                          <td><a class=="moveright"><font color=blue>ATVI</font></a></td>
+                          <td><a class=="moveright"><font color=blue>Activision Blizzard, Inc</a></font></td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+
+                      </tr>
+                                            <tr>
+                          <td><a class=="moveright"><font color=blue>AVGO</font></a></td>
+                          <td><a class=="moveright"><font color=blue>Avago Technologies Limited  </a></font></td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+                          <td>44.97</td>
+
+                      </tr>
+                                            <tr>
+                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>BBBY</font></a></td>
+                          <td><a HREF="popupbasic.html"onClick="return popup(this, 'notes')"><font color=blue>Bed Bath & Beyond Inc.</a></font></td>
                           <td>44.97</td>
                           <td>44.97</td>
                           <td>44.97</td>
