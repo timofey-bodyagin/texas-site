@@ -18,15 +18,29 @@ body {
   background-image: url(../images/29.png);
 
   }
+
+.span2 {
+    float: left;
+    padding: 15px;
+    width: 15%;
+    margin-bottom: 1px;
+}
 .span4 {
     float: left;
     padding: 15px;
     width: 33%;
+    
+    
 }
 .span8 {
     float: left;
     padding: 15px;
     width: 66%;
+}
+.span6 {
+    float: left;
+    padding: 15px;
+    width: 70%;
 }
 .span433-image {
  height: 222px;
@@ -399,7 +413,7 @@ ul.nostyle i {
 *******About Us******
 **************************/
 #about {
-  padding: 100px 0;
+  padding: 40px 0;
 }
 
 
@@ -429,12 +443,16 @@ ul.nostyle i {
 *******Patent***********/
 .patent {
   padding: 100px 0;
-  margin-top: 10px;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .patent1 {
   padding: 100px 0;
-  margin-top: 10px;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: lightgray;
 }
 
@@ -481,6 +499,7 @@ ul.nostyle i {
 #footer {
   padding-top: 20px;
   color: white;
+ 
   background: black;
 }
 #footer a {
@@ -585,14 +604,7 @@ div.stockTicker span.quote
    width: 75%;
 
 }
-#about
-{
-  font-size:4pt;
-  font-family:'Roboto', sans-serif;
-  font-weight: lighter;
 
-  color:black;
-}
 #popup
 {
   font-size:4pt;
