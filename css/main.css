@@ -19,11 +19,16 @@ body {
 
   }
 .span4 {
- float: left;
- width: 33%;
+    float: left;
+    padding: 15px;
+    width: 33%;
 }
-
-.span4-image {
+.span8 {
+    float: left;
+    padding: 15px;
+    width: 66%;
+}
+.span433-image {
  height: 222px;
 }
 h1,
