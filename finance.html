@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="software development, software developers, outsourcing, offshore software development, software development company, software development firm, software development services" />
-    <meta name="author" content="fil" >
+    <meta name="author" content="Sergey" >
     <title>spotquoting.com</title>
 	<!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -76,36 +76,38 @@ div.panel {
 	display: none;
 }
 </style>
+
 <script type="text/javascript">
+
 $(document).ready(function() {
-    $('#moveleft').click(function() {
-        $('#textbox').animate({
-        'marginLeft' : "-=30px" //moves left
-        });
-    });
+
+ var m = document.getElementById("textbox").style.marginLeft;
+  if(m < 20) { 
     $('.moveright').click(function() {
-    $('#textbox').animate({
-        'marginLeft' : "0px" //moves left
-        });
-        $('#textbox').animate({
-        'marginLeft' : "+=70%" //moves right
-        });
-        
+    
+        document.getElementById("textbox").style.marginLeft = "60%";
+     
     });
-    $('#movedown').click(function() {
-        $('#textbox').animate({
-        'marginTop' : "+=30px" //moves down
-        });
-    });
-    $('#moveup').click(function() {
-        $('#textbox').animate({
-        'marginTop' : "-=30px" //moves up
-        });
-    });
+   }; 
+    
 });
 </script>
+
+<script>
+            var p = {
+                onload: function() {
+                    var rows = document.getElementById("fintable").rows;
+                    for(var i = 0, ceiling = rows.length; i < ceiling; i++) {
+                        rows[i].onclick = function() {
+                            alert(this.cells[0].innerHTML);
+                            
+                        }
+                    }
+                }
+            };
+        </script>
 </head><!--/head-->
-<body id="home" class="homepage">
+<body id="home" class="homepage" onload="p.onload()">
 
 
     <header id="top-header" class="navbar-inverse navbar-fixed-top" >
@@ -213,7 +215,7 @@ $(document).ready(function() {
 <hr>
 <h5>NASDAQ 100</h5>
 <hr size="300">
-  <table class="responsive" border="1" width="98%" >
+  <table id="fintable" class="responsive" border="1" width="98%" >
     			<thead>
                 <tr>
 					<th width="10%"><a href=""><font color=#000033>Sym</font></a></th>
