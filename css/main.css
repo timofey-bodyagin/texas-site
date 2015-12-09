@@ -18,6 +18,14 @@ body {
   background-image: url(../images/29.png);
 
   }
+.span4 {
+ float: left;
+ width: 33%;
+}
+
+.span4-image {
+ height: 222px;
+}
 h1,
 h2,
 h3,
@@ -410,6 +418,19 @@ ul.nostyle i {
   background-image: -ms-linear-gradient(4deg, #2caab3 0%, #2c8cb3 100%);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+/*************************
+*******Patent***********/
+.patent {
+  padding: 100px 0;
+  margin-top: 10px;
+}
+
+.patent1 {
+  padding: 100px 0;
+  margin-top: 10px;
+  background-color: lightgray;
 }
 
 /*************************

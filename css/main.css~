@@ -18,6 +18,10 @@ body {
   background-image: url(../images/29.png);
 
   }
+.span4 {
+ float: left;
+ width: 33%;
+}
 h1,
 h2,
 h3,
@@ -413,6 +417,19 @@ ul.nostyle i {
 }
 
 /*************************
+*******Patent***********/
+.patent {
+  padding: 100px 0;
+  margin-top: 10px;
+}
+
+.patent1 {
+  padding: 100px 0;
+  margin-top: 10px;
+  background-color: lightgray;
+}
+
+/*************************
 *******Contact******
 **************************/
 
@@ -472,7 +489,7 @@ ul.nostyle i {
   display: inline-block;
   margin: 0 7.5px;
 }
-#footer p.text-center {
+#footer p.text-left {
 	font-size: 16px;
 }
 @media only screen and (min-width: 768px) {
