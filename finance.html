@@ -99,8 +99,9 @@ $(document).ready(function() {
                     var rows = document.getElementById("fintable").rows;
                     for(var i = 0, ceiling = rows.length; i < ceiling; i++) {
                         rows[i].onclick = function() {
-                            alert(this.cells[0].innerHTML);
-                            
+                           // alert(this.cells[0].innerHTML);
+                           var st ="<p><table border=2 bordercolor=#000033><tr><td><center><H4>SOLD</H4><h4>"+this.cells[3].innerHTML +" "+this.cells[0].innerHTML +" Shares</h4><h4>"+this.cells[2].innerHTML+"<h4></center></td></tr></table><br><table border=2 bordercolor=#000033><tr><td><center><H4>BOUGHT</H4><h4>"+this.cells[5].innerHTML +" "+this.cells[0].innerHTML +" Shares</h4><h4>"+this.cells[4].innerHTML+"<h4></center></td></tr></table><br></p>";
+                            $("#textbox").html(st);
                         }
                     }
                 }
