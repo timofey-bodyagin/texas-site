@@ -1,177 +1,56 @@
-<!DOCTYPE html>
-
-
-<html class="no-overflow-y" xmlns="https://www.w3.org/1999/xhtml" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-
-<head>
-
-	
-	
-
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-
-
-	<title>Spot Quote</title>
-
-<link href="https://spotquoting.com/wp-content/themes/Avada/new-style.css" rel="stylesheet">
-
-
-<link rel='stylesheet' id='fontawesome-css'  href='https://spotquoting.com/wp-content/themes/Avada/assets/fonts/fontawesome/font-awesome.css?ver=3.8.4' type='text/css' media='all' />
-<!--[if lte IE 9]>
-<link rel='stylesheet' id='avada-IE-fontawesome-css'  href='https://spotquoting.com/wp-content/themes/Avada/assets/fonts/fontawesome/font-awesome.css?ver=3.8.4' type='text/css' media='all' />
-<![endif]-->
-<!--[if lte IE 8]>
-<link rel='stylesheet' id='avada-IE8-css'  href='https://spotquoting.com/wp-content/themes/Avada/assets/css/ie8.css?ver=3.8.4' type='text/css' media='all' />
-<![endif]-->
-<!--[if IE]>
-<link rel='stylesheet' id='avada-IE-css'  href='https://spotquoting.com/wp-content/themes/Avada/assets/css/ie.css?ver=3.8.4' type='text/css' media='all' />
-<![endif]-->
-<link rel='stylesheet' id='avada-iLightbox-css'  href='https://spotquoting.com/wp-content/themes/Avada/ilightbox.css?ver=3.8.4' type='text/css' media='all' />
-<link rel='stylesheet' id='avada-animations-css'  href='https://spotquoting.com/wp-content/themes/Avada/animations.css?ver=3.8.4' type='text/css' media='all' />
-<script type='text/javascript' src='https://spotquoting.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-content/plugins/custom-stock-ticker/modernizr.js?ver=2.1.1'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-content/plugins/custom-stock-ticker/stock_ticker_script.js?ver=2.1.1'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min.js?ver=4.6.92'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?ver=4.6.92'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-content/plugins/wonderplugin-carousel/engine/wonderplugincarouselskins.js?ver=5.2'></script>
-<script type='text/javascript' src='https://spotquoting.com/wp-content/plugins/wonderplugin-carousel/engine/wonderplugincarousel.js?ver=5.2'></script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://spotquoting.com/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://spotquoting.com/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="Bluefish 2.2.7" />
-<link rel='canonical' href='https://spotquoting.com/' />
-<link rel='shortlink' href='https://spotquoting.com/' />
-
-
-
-
-	var doc = document.documentElement;
-
-	doc.setAttribute('data-useragent', navigator.userAgent);
-
-	</script>
-
-
-
-
-
-	
-
-
-	
-</head>
-
-
-<body class="home page page-id-2660 page-template page-template-100-width page-template-100-width-php fusion-body no-tablet-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop mobile-logo-pos-left layout-wide-mode mobile-menu-design-modern" data-spy="scroll">
-
-	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="sample.css">
+		<link rel="stylesheet" ензу="text/css" href="jquery-ui.css">
+		<title>Spot Quote Market Making Quotes</title>
+		<script src="jquery-1.11.3.js"></script>
+		<script src="jquery-ui.js"></script>
+		<script src="jquery.csv-0.71.js"></script>
+		<script src="sqm-sample.js"></script>
+    	<script>
+	    	String.format = function() {
+	    		var s = arguments[0];
+	    		for (var i = 0; i < arguments.length - 1; i++) {       
+	    			var reg = new RegExp("\\{" + i + "\\}", "gm");             
+	    			s = s.replace(reg, arguments[i + 1]);
+	    		}
+	    		return s;
+	    	}
+    		$(document).ready(SqmOnAppLoad);
+    	</script>
+	</head>
+	<body>
+		<h1>Spot Quote Market Making Quotes</h1>
+		<table class="sqm-main-table">
+			<thead>
+				<tr>
+					<td class="sqm-main-table-top-row-cell" colspan="6">
+						<table width="100%">
+						<tr>
+							<td>Nasdaq 100</td>
+							<td class="sqm-right">Dec 4 9.32 AM</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-symbol">Sym</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-name">Name</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid sqm-right">Bid</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid-shares sqm-right">Bid Shares</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask sqm-right">Ask</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask-shares sqm-right">Ask Shares</td>
+				</tr>
+			</thead>
+			<tbody id="sqm_table_body">
+			
+			</tbody>
+		</table>
 		
-
-	<div id="wrapper" class="">
-
-	<div id="home" style="position:relative;top:1px;"></div>
-
-	
-	<div id="slidingbar-area" >
-	<div id="slidingbar">
-		<div class="fusion-row">
-			<div class="fusion-columns row fusion-columns-2 columns columns-2">
-				<div class="fusion-column col-lg-6 col-md-6 col-sm-6"><div id="text-15" class="fusion-slidingbar-widget-column widget widget_text">			<div class="textwidget"><div class="testi-class-bg">
-<p class="author-name">Sally</p>
-<hr style="border: 1px solid #BABABA;"/>
-<p class="author-text"><img src="https://spotquoting.com/wp-content/themes/Avada/assets/images/q2.png" /><span style="padding-right:5px;"></span>Deep allows me to see my transaction costs before I trade for the size I want to trade, and I have no obligation to accept what is offered to me.</p>
-<p class="author-bottom-name">-Sally</p>
-</div></div>
-		<div style="clear:both;"></div></div>		<div id="recent-posts-13" class="fusion-slidingbar-widget-column widget widget_recent_entries">		<h3>Recent Posts</h3>		<ul>
-					<li>
-				<a href="https://spotquoting.com/demo2/">demo2</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/crooked-casino-analogy-by-author-michael-lewis/">Crooked Casino Analogy By Author Michael Lewis</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/jeffrey-solomon-ceo-of-cowen-company-on-market-structure/">Jeffrey Solomon &#8211; CEO of Cowen  Company on Market Structure</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/sec-chairman-part2/">SEC Chairman on Market Structure On</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/sec-chairman-part1/">SEC Chairman on Market Structure</a>
-						</li>
-				</ul>
-		<div style="clear:both;"></div></div></div><div class="fusion-column col-lg-6 col-md-6 col-sm-6">		<div id="recent-posts-8" class="fusion-slidingbar-widget-column widget widget_recent_entries">		<h3>Recent Posts</h3>		<ul>
-					<li>
-				<a href="https://spotquoting.com/demo2/">demo2</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/crooked-casino-analogy-by-author-michael-lewis/">Crooked Casino Analogy By Author Michael Lewis</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/jeffrey-solomon-ceo-of-cowen-company-on-market-structure/">Jeffrey Solomon &#8211; CEO of Cowen  Company on Market Structure</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/sec-chairman-part2/">SEC Chairman on Market Structure On</a>
-						</li>
-					<li>
-				<a href="https://spotquoting.com/sec-chairman-part1/">SEC Chairman on Market Structure</a>
-						</li>
-				</ul>
-		<div style="clear:both;"></div></div><div id="text-11" class="fusion-slidingbar-widget-column widget widget_text">			<div class="textwidget"><div class="testi-class-bg">
-<p class="author-name">Sally</p>
-<hr style="border: 1px solid #BABABA;"/>
-<p class="author-text"><img src="https://spotquoting.com/wp-content/themes/Avada/assets/images/q2.png" /><span style="padding-right:5px;"></span>Deep allows me to see my transaction costs before I trade for the size I want to trade, and I have no obligation to accept what is offered to me.</p>
-<p class="author-bottom-name">-Sally</p>
-</div></div>
-		<div style="clear:both;"></div></div></div>				<div class="fusion-clearfix"></div>
-			</div>			
+		<div id="dialog-report" title="Execution report">
+  			<p id="dialog-report-text"></p>
 		</div>
-	</div>
-	<div class="sb-toggle-wrapper">
-		<a class="sb-toggle" href="#"></a>
-	</div>
-</div>
-
-	
-				<div class="fusion-header-wrapper">
-				<div class="fusion-header-v1 fusion-logo-left fusion-sticky-menu- fusion-sticky-logo- fusion-mobile-logo- fusion-mobile-menu-design-modern">
-					<div class="fusion-header-sticky-height"></div>
-<div class="fusion-header">
-	<div class="fusion-row">
-				<div class="fusion-logo" data-margin-top="20px" data-margin-bottom="31px" data-margin-left="0px" data-margin-right="0px">
-						<a href="https://spotquoting.com">
-							
-				<img src="https://spotquoting.com/wp-content/uploads/2015/12/new-final-logo.png" width="" height="" alt="Spot Quote" class="fusion-logo-1x fusion-standard-logo" />
-								<img src="https://spotquoting.com/wp-content/uploads/2015/10/new-final-logo.png" width="" height="" alt="Spot Quote" style="width:px; max-height: px; height: auto;" class="fusion-standard-logo fusion-logo-2x" />
-				
-				<!-- mobile logo -->
-				
-				<!-- sticky header logo -->
-							</a>
-					</div>
-	<div class="fusion-main-menu"><ul id="menu-main-menutop" class="fusion-menu"><li  id="menu-item-11496"  class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2660 current_page_item menu-item-11496"  ><a    href="https://spotquoting.com/">Home</a></li>
-<li  id="menu-item-11852"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11852"  ><a    href="https://spotquoting.com/who-we-are/">Who We Are</a></li>
-<li  id="menu-item-11850"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11850"  ><a    href="https://spotquoting.com/patent-portfolio/">Patent Portfolio</a></li>
-<li  id="menu-item-11947"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11947"  ><a    href="https://spotquoting.com/managment/">Managment</a></li>
-<li  id="menu-item-11851"  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11851"  ><a    href="https://spotquoting.com/contact-us/">Contact US</a></li>
-</ul></div><div class="fusion-mobile-menu-icons"><a href="#" class="fusion-icon fusion-icon-bars"></a></div><div class="fusion-mobile-nav-holder"></div>	</div>
-</div>
-				</div>
-			</div>
-		
-	<div id="sliders-container">
-
-	
-	</div>
-
-	
-	
-	
-	
-
-<!-- top flash embed swf tag end-->
-            </p>
-
-
 	</body>
 </html>

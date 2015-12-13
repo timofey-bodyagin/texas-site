@@ -1,29 +1,35 @@
-*~
-sample.txt
-## Directory-based project format:
-.idea/
+/.buildpath
+/build/
+*/archive/
 
-# Gradle:
-# .idea/gradle.xml
-# .idea/libraries
+__MACOSX
+.DS_Store
 
-# Mongo Explorer plugin:
-# .idea/mongoSettings.xml
+.project
+.settings
+.classpath
+.sass-cache/
 
-## File-based project format:
-*.ipr
-*.iws
+# OS generated files #
+######################
+*/.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-## Plugin-specific files:
-
-# IntelliJ
-/out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-
-
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

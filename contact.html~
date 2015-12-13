@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="software development, software developers, outsourcing, offshore software development, software development company, software development firm, software development services" />
+    <meta name="author" content="Sergey" >
+    <title>spotquoting.com</title>
+	<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.transitions.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/57.png">
+<!-- 
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-39630953-1', 'auto');
+  ga('send', 'pageview');
+
+</script> -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script type='text/javascript' src='js/jquery-1.6.4.js'></script>
+
+</head><!--/head-->
+<body id="home" class="homepage">
+
+
+    <header id="top-header" class="navbar-inverse navbar-fixed-top" >
+            <div id="head" class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+                    
+                    <!-- logo -->
+                    <div class="navbar-brand">
+                        <a class="smooth-scroll" data-section="index.html" href="index.html" >
+                            <img src="images/logo.png" alt="SPOTQUOTING">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                 </div>
+
+                <!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="fusion-main-menu">
+                        <ul id="nav" class="nav navbar-nav nav-pills">
+                            <li class="scroll"><a href="index.html" data-section="index.html">Home</a></li>
+                            <li class="scroll"><a href="about.html" data-section="about.html">Who we are</a></li>
+                            <li class="scroll"><a href="patents.html" data-section="patents.html">Patent Portfolio</a></li>
+                            <li class="scroll"><a href="management.html" data-section="management.html">Management</a></li>
+                            <li class="scroll"><a href="finance.html" data-section="finance.html">Trading Platform</a></li>
+                            <li class="scroll"><a href="contact.html" data-section="contact.html">Contact US</a></li>
+                            <li class="scroll"><a href="contact.html" data-section="contact.html"></a></li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
+               
+            </div>
+            
+        </header>
+<section id="img1">
+<div id="container">
+    <img class="img-responsive" src="../images/contact-new.jpg" alt="Contacts" />
+</div>
+ </section>
+ <section id="img2">
+  <div class="row">
+  <div class="span8">
+  		<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+		<div class="row">
+		<label for="name">Your name:</label><br />
+		<input id="name" class="input" name="name" type="text" value="" size="70" /><br />
+		</div>
+		<div class="row">
+		<label for="email">Your email:</label><br />
+		<input id="email" class="input" name="email" type="text" value="" size="70" /><br />
+		</div>
+		<div class="row">
+		<label for="subj">Subject:</label><br />
+		<input id="subj" class="input" name="email" type="text" value="" size="70" /><br />
+		</div>
+		<div class="row">
+		<label for="message">Your message:</label><br />
+		<textarea id="message" class="input" name="message" rows="7" cols="69"></textarea><br />
+		</div>
+		<input id="submit_button" type="submit" value="Send email" />
+		</form>				    
+      
+      
+      
+      
+      
+      </div>
+      <div class="span4">
+      <h5>Sam Balabon</h5>
+<h5>Chief Executive Officer
+Austin, TX</h5>
+
+<h5>phone 512 585-4589</h5>
+
+<h5>mailsbalabon@spotqouting.com</h5>
+
+<h5>Jim O‘Reilly</h5>
+<h5>Chief Marketing Officer</h5>
+<h5>Rockville Centre, NY</h5>
+
+<h5>phone516 287-0946</h5>
+
+<h5>mailjoreilly@spotqouting.com</h5>
+
+<h5>locationCraig Kravetz</h5>
+<h5>Head of Customer Onboarding</h5>
+<h5>Montclair, NJ</h5>
+
+<h5>phone646 204-9382</h5>
+
+<h5>mailckravetzy@spotqouting.com</h5>
+</div>
+      
+   <br style="clear: both;">
+</div>
+
+ 
+ 
+ </section>
+ <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+					
+                    <p class="text-left">
+                        &copy; Copyright 2015 Spot Quote | All Rights Reserved.
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a target="_blank" href="#"><img src="images/fb.png" alt="" width="42" height="42"></a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a target="_blank" href="#"><img src="images/tw.png" alt="" width="42" height="42"></a>
+                        
+                    </p>
+                    
+					
+                   
+					
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->       
+</body>
+</html>
+
