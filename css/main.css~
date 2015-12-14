@@ -1,8 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
 @import url(http://fonts.googleapis.com/css?family=Glegoo);
+* {
+	outline: 0 none !important;
+}
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   background: #fff url(https://spotquoting.com/wp-content/uploads/2013/01/29.png);
 }
 h1,
@@ -19,12 +22,6 @@ p {
   line-height: 22px;
   font-size: 16px;
   font-weight: 300;
-}
-.map-area p {
-  font-family: 'Roboto', sans-serif;
-  line-height: 30px;
-  font-size: 16px;
-  font-weight: normal;
 }
 ul {
   padding-left: 0;
@@ -98,6 +95,9 @@ a:hover {
 .navbar-inverse .navbar-toggle {
   background: #444;
 }
+.navbar-fixed-top .navbar-collapse {
+	max-height: 800px;
+}
 #top-bar {
   background: #fff url(https://spotquoting.com/wp-content/uploads/2013/01/29.png);
   color: #fff;
@@ -111,7 +111,7 @@ a:hover {
   background: transparent;
 }
 #top-bar.animated-header {
-  padding: 20px 0;
+  padding: 20px 0 0;
   background: #fff url(https://spotquoting.com/wp-content/uploads/2013/01/29.png);
   box-shadow: none;
 }
@@ -124,14 +124,19 @@ a:hover {
 #top-bar .main-menu li a {
   font-size: 14px;
   font-weight: 500;
-  border-bottom: 2px solid transparent;
+  border-bottom: 5px solid transparent;
   -webkit-transition: .3s all;
   -o-transition: .3s all;
   transition: .3s all;
- 
+  background-color: none !important;
+  color: #000;  
 }
 #top-bar .main-menu li a:hover {
   color: #FF8283;
+}
+#top-bar .main-menu li a.active {
+  color: #FF8283;
+  border-bottom: 5px solid #FF8283;
 }
 .navbar-custom .nav li > a {
   position: relative;
@@ -316,65 +321,9 @@ a:hover {
   letter-spacing: normal;
   border-radius: 0;
 }
-/*Hero area 4  */
-#hero-area3 {
-  background: url('../images/patents/contact-new.jpg') no-repeat 50%;
-  background-size: cover;
-  opacity: 1;
-  background-attachment: fixed;
-  padding: 230px 0;
-  color: #fff;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
-  position: relative;
-}
-#hero-area3:before {
-  content: '';
-  z-index: 9;
-  background: rgba(255, 255, 255, 0.28);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-#hero-area3 .block {
-  position: relative;
-  z-index: 999;
-}
-#hero-area3 h1 {
-  font-size: 40px;
-  line-height: 50px;
-  color: #333;
-  font-weight: 700;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-#hero-area3 h2 {
-  font-size: 18px;
-  font-weight: 300;
-  margin-bottom: 38px;
-  line-height: 27px;
-  text-transform: uppercase;
-  color: #666;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 25px;
-}
-#hero-area3 .btn {
-  background: #414141;
-  border: none;
-  color: #fff;
-  padding: 20px 35px;
-  margin-top: 30px;
-  font-size: 16px;
-  font-size: 13px;
-  line-height: 1em;
-  text-transform: uppercase;
-  letter-spacing: normal;
-  border-radius: 0;
-}
 
 #call-to-action {
-  background: #02bdd5;
+  background: grey;
   background-size: cover;
   background-attachment: fixed;
   padding: 80px 0;
@@ -400,7 +349,7 @@ a:hover {
 #call-to-action .block .btn-contact {
   background: #fff;
   border: none;
-  color: #02bdd5;
+  color: black;
   padding: 16px 35px;
   margin-top: 20px;
   font-size: 12px;
@@ -433,8 +382,14 @@ a:hover {
 background-color: lightgrey;
 
 }
-#about {
-  padding: 110px 0;
+#about, #ticker {
+  padding: 30px 0;
+}
+#ticker {
+	padding: 110px 0 0;
+}
+#about1 {
+	padding: 60px 0;
 }
 #about .block {
   padding: 20px 30px 0 30px;
@@ -1294,14 +1249,123 @@ article {
 /* Index page customized */
 .row1 {
 	background-color: #fff;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 .col1 {
-	padding: 5px;
+	padding: 10px;
+}
+.container1 {
+	margin: 100px auto;
+}
+.col2 {
+	padding: 0;
+	margin: 0;
+	width: 67%;
+	background: #CACACB;
+}
+.video-top-left {
+	background: #707070;
+	width: 100%;
+	color: #fff;
+	padding: 20px 34px 0 !important;
+	min-height: 165px !important;
+}
+.video-top-left-title {
+	font-size: 30px;
+	font-weight: 300;
+	margin: 20px 0 10px;
+}
+.video-top-left-desc {
+	font-size: 16px;
+}
+.video-bot-left {
+	background-color: #000;
+	padding-top: 4px;
+}
+.video-bot-right {
+	background-color: #717E8F;
+	border-top: 1px solid #717E8F;
+}
+.video-bot-right-wrap {
+	padding: 10px 15px;
+	color: #fff;
+}
+.small-image img {
+	width: 90px;
+	float: left;
+	margin-right: 15px;
+}
+.col3 {
+	padding: 0;
+	margin: 0;
+	width: 33%;
+	background: #E4E4E4;
+}
+.video-top-right {
+	background: #6C6C6C;
+	width: 100%;
+	color: #fff;
+	min-height: 165px !important;
+}
+.video-top-right a {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.video-top-right a img {
+	height: auto;
+}
+.video-top-right-prev {
+	float: left;
+	width: 50%;
+	height: 100%;
+	background: #BABABA;
+}
+.video-top-right-next {
+	float: right;
+	width: 50%;
+	height: 100%;
+	background: #6C6C6C;
 }
 #about .block.block1 {
 	padding: 0;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
+	width: 100%;
 }
+#about .block.block2 {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+/* Galleries */
+.owl-carousel {
+	display: block;
+}
+.owl-pagination {
+	display: none;
+}
+
+    #owl-demo1 .item img, #owl-demo2 .item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    #bar, #bar1{
+      width: 0%;
+      max-width: 100%;
+      height: 4px;
+      background: #9C9C9E;
+    }
+    #progressBar, #progressBar1{
+      width: 100%;
+      background: #CACACB;
+    }
+
+
+
 /***********************
 ********* Stock Ticker **
 ************************/
