@@ -5,8 +5,8 @@
         ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="shortcut icon" href="https://spotquoting.com/wp-content/themes/Avada/assets/images/favicon.png" type="image/x-icon">
-        <title>Trading Platform - Spot Quote</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Timer Agency Template</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="Sergey" >
@@ -33,8 +33,7 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- responsive css -->
         <link rel="stylesheet" href="css/responsive.css">
-        <link rel="stylesheet" type="text/css" href="../css/sample.css">
-		  <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
+        
         <!-- Template Javascript Files
         ================================================== -->
         <!-- modernizr js -->
@@ -53,41 +52,8 @@
         <script src="js/jquery.fancybox.js"></script>
         <!-- template main js -->
         <script src="js/main.js"></script>
-        <script src="../js/jquery-ui.js"></script>
-	     <script src="../js/jquery.csv-0.71.js"></script>
-		  <script src="../js/sqm-sample.js"></script>
-        <script>
-	    	String.format = function() {
-	    		var s = arguments[0];
-	    		for (var i = 0; i < arguments.length - 1; i++) {       
-	    			var reg = new RegExp("\\{" + i + "\\}", "gm");             
-	    			s = s.replace(reg, arguments[i + 1]);
-	    		}
-	    		return s;
-	    	}
-    		$(document).ready(SqmOnAppLoad);
-    	</script>
-<SCRIPT language="JavaScript">
-<!--hide
-
-var password;
-
-var pass1="cool";
-
-password=prompt('Please enter your password to view this page!',' ');
-
-if (password==pass1)
-  alert('Password Correct! Click OK to enter!');
-else
-   {
-    window.location="wrongpass.html";
-    }
-
-//-->
-</SCRIPT>
     </head>
     <body>
-
         <!--
         ==================================================
         Header Section Start
@@ -119,10 +85,10 @@ else
                             <li>
                                 <a href="/" >Home</a>
                             </li>
-                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a class="active" href="about.html">Who We Are</a></li>
                             <li><a href="patents.html">Patent Portfolio</a></li>
                             <li><a href="management.html">Management</a></li>
-                            <li><a class="active" href="finance.html">Trading Platform</a></li>
+                            <li><a href="finance.html">Trading Platform</a></li>
                             
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
@@ -131,60 +97,25 @@ else
                 <!-- /main nav -->
             </div>
         </header>
-  <!-- Small header -->
-  <section id="header1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12"> 
-                        <br>
-                        <br>
+
+        <section class="moduler wrapper_404">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s" >404</h1>
+                            <h2 class="wow fadeInUp animated" data-wow-delay=".6s">Opps! You have some problems</h2>
+                            <p class="wow fadeInUp animated" data-wow-delay=".9s">Password is wrong!</p>
+                            <a href="index.html" class="btn btn-dafault btn-home wow fadeInUp animated" data-wow-delay="1.1s">Go Home</a>
+                            
                         </div>
                     </div>
                 </div>
-  </section>
-  <!-- Table -->
-  <section id="about1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12"> 
-                        <br>
-                        <h1>Spot Quote Market Making Quotes</h1>
-		<table class="sqm-main-table">
-			<thead>
-				<tr>
-					<td class="sqm-main-table-top-row-cell" colspan="6">
-						<table width="100%">
-						<tr>
-							<td>Nasdaq 100</td>
-							<td class="sqm-right">Dec 4 9.32 AM</td>
-						</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-symbol">Sym</td>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-name">Name</td>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid sqm-right">Bid</td>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid-shares sqm-right">Bid Shares</td>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask sqm-right">Ask</td>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask-shares sqm-right">Ask Shares</td>
-				</tr>
-			</thead>
-			<tbody id="sqm_table_body">
-			
-			</tbody>
-		</table>
-		
-		<div id="dialog-report" title="Execution report">
-  			<p id="dialog-report-text"></p>
-		</div>
-                        </div>
-                    </div>
-                </div>
-   </section>     
-   
-            
-            <!--
+            </div>
+        </section>
+
+ 
+        <!--
             ==================================================
             Footer Section Start
             ================================================== -->
@@ -211,6 +142,5 @@ else
                     </div>
                 </div>
             </footer> <!-- /#footer -->
-                
-        </body>
-    </html>
+    </body>
+</html>
