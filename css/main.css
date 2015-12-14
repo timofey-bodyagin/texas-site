@@ -321,6 +321,62 @@ a:hover {
   letter-spacing: normal;
   border-radius: 0;
 }
+/*Hero area 4  */
+#hero-area3 {
+  background: url('../images/contact-new.jpg') no-repeat 50%;
+  background-size: cover;
+  opacity: 1;
+  background-attachment: fixed;
+  padding: 230px 0;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+#hero-area3:before {
+  content: '';
+  z-index: 9;
+  background: rgba(255, 255, 255, 0.28);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#hero-area3 .block {
+  position: relative;
+  z-index: 999;
+}
+#hero-area3 h1 {
+  font-size: 40px;
+  line-height: 50px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+#hero-area3 h2 {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 38px;
+  line-height: 27px;
+  text-transform: uppercase;
+  color: #666;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 25px;
+}
+#hero-area3 .btn {
+  background: #414141;
+  border: none;
+  color: #fff;
+  padding: 20px 35px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-size: 13px;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  border-radius: 0;
+}
 
 #call-to-action {
   background: grey;
