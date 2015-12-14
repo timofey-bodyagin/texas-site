@@ -179,6 +179,12 @@ SqmSampleTable.prototype.getRow = function(/*Integer*/ index) {
 	return this.rows[index];
 }
 
+/**
+ * Private.
+ * Create and append new row to the data table.
+ * Don't use this method to manage table rows.
+ * Use updateRow method instead.
+ */
 SqmSampleTable.prototype.createRow = function(/*SqmSampleEntry*/entry) {
 	var index = this.getRowCount();
 	var row = new SqmSampleTableRow(index);
@@ -188,32 +194,45 @@ SqmSampleTable.prototype.createRow = function(/*SqmSampleEntry*/entry) {
 	return row;
 }
 
+SqmSampleTable.prototype.updateRow = function(/*Integer*/ rowIndex, /*SqmSampleEntry*/entry) {
+	if ( rowIndex >= this.getRowCount() ) {
+		this.createRow(entry);
+	} else {
+		this.getRow(rowIndex).update(entry);
+	}
+}
+
 /**
  * Add entry to the table model.
  * Returns true if an entry has been appended or false if an entry overrides existing entry.
  */
-SqmSampleTable.prototype.addEntry = function(/*SqmSampleEntry*/entry) {
-	var index = this.getEntryIndexBySymbol(entry.symbol);
-	if ( index >= 0 ) {
-		this.entries[index] = entry;
-		return false;
-	} else {
-		this.entries[this.entries.length] = entry;
-		return true;
-	}
-}
+//SqmSampleTable.prototype.addEntry = function(/*SqmSampleEntry*/entry) {
+//	var index = this.getEntryIndexBySymbol(entry.symbol);
+//	if ( index >= 0 ) {
+//		this.entries[index] = entry;
+//		return false;
+//	} else {
+//		this.entries[this.entries.length] = entry;
+//		return true;
+//	}
+//}
 
+/**
+ * Top-level facade class.
+ */
 function SqmSample() {
 	this.tableModel = new SqmSampleTableModel();
 	this.table = new SqmSampleTable(document.getElementById("sqm_table_body"));
 	this.nameCache = new Object();
+	this.timerID = null;
+	this.delay = 500;
+	this.currentSnapshotNumber = 0;
+	this.csvSeparatorChar = ",";
 }
 
 SqmSample.prototype.start = function() {
-	this.symbolNameDataRequest("nasdaq100list.csv");
-	
-	//this.filteredTableDataRequest("nasdaq100-mdanalyzer-main-view-1.csv");
-	this.serviceTableDataRequest("nasdaq100-mdanalyzer-service-view-1.csv");
+	var object = this;
+	this.timeID = setTimeout(function() { object.onFirstTimerTick(); }, this.delay );
 }
 
 SqmSample.prototype.getSymbolName = function(symbol) {
@@ -224,32 +243,44 @@ SqmSample.prototype.getSymbolName = function(symbol) {
 	}
 }
 
+SqmSample.prototype.onFirstTimerTick = function() {	
+	this.sendStockListDataRequest("nasdaq100list.csv");
+}
+
+SqmSample.prototype.onTimerTick = function() {
+	this.sendTableDataRequest();
+}
+
 /**
  * This handler is for a csv which is already filtered by Sam's condition.
  */
 SqmSample.prototype.onFilteredTableData = function(/*String*/text) {
-	var array = $.csv.toArrays(text, { separator: ";" });
+	var array = $.csv.toArrays(text, { separator: this.csvSeparatorChar });
 	var length = array.length;
 	for ( var i = 0; i < length; i ++ ) {
 		var x = array[i];
 		// there are: symbol, bid, bid sz, bid $$$, ask, ask sz, ask $$$
 		var entry = new SqmSampleEntry(x[0], this.getSymbolName(x[0]), x[1], x[2], x[4], x[5]);
-		this.table.createRow(entry);
+		this.table.updateRow(i, entry);
 	}
+	var object = this;
+	this.timeID = setTimeout(function() { object.onTimerTick(); }, this.delay );
 }
 
 /**
  * This handler is for a csv with last saved symbol state (service view of mdanalyzer).
  */
 SqmSample.prototype.onServiceTableData = function(/*String*/text) {
-	var array = $.csv.toArrays(text, { separator: ";" });
+	var array = $.csv.toArrays(text, { separator: this.csvSeparatorChar });
 	var length = array.length;
 	for ( var i = 0; i < length; i ++ ) {
 		var x = array[i];
 		// there are: symbol, bid, bid sz, bid-1, bid-1 sz, bid met, ask, ask sz, ask+1, ask+1 sz, ask met
 		var entry = new SqmSampleEntry(x[0], this.getSymbolName(x[0]), x[1], x[2], x[6], x[7]);
-		this.table.createRow(entry);
-	} 
+		this.table.updateRow(i, entry);
+	}
+	var object = this;
+	this.timeID = setTimeout(function() { object.onTimerTick(); }, this.delay );
 }
 
 SqmSample.prototype.onStockListData = function(/*String*/text) {
@@ -260,19 +291,23 @@ SqmSample.prototype.onStockListData = function(/*String*/text) {
 		// there are: Symbol, Name, lastsale, netchange,pctchange, share_volume, Nasdaq100_points
 		this.nameCache[x[0]] = x[1];
 	}
+	this.sendTableDataRequest(); // Request table data immediately
 }
 
 SqmSample.prototype.onTableDataError = function(/*String*/textStatus) {
 	alert("Cannot load table data: " + textStatus);
 }
 
-SqmSample.prototype.symbolNameDataRequest = function(/*String*/ url) {
+/**
+ * Request for stock names.
+ */
+SqmSample.prototype.sendStockListDataRequest = function(/*String*/url) {
 	var object = this;
 	$.ajax({
 		url: url,
 		type: "GET",
 		dataType: "text",
-		async: false,
+		//async: false,
 		success: function(data) {
 			object.onStockListData(data);
 		},
@@ -287,7 +322,7 @@ SqmSample.prototype.symbolNameDataRequest = function(/*String*/ url) {
  * (when the next level quote size is greater than top quote size).
  * In THIS case you cannot get all 100 symbols of nasdaq 100 in the table.
  */
-SqmSample.prototype.filteredTableDataRequest = function(/*String*/ url) {
+SqmSample.prototype.sendFilteredTableDataRequest = function(/*String*/ url) {
 	var object = this;
 	$.ajax({
 		url: url,
@@ -307,7 +342,7 @@ SqmSample.prototype.filteredTableDataRequest = function(/*String*/ url) {
  * In THIS case you cannot see a result of filtering by Sam's condition
  * but you can see all of 100 symbols in nasdaq 100.
  */
-SqmSample.prototype.serviceTableDataRequest = function(/*String*/url) {
+SqmSample.prototype.sendServiceTableDataRequest = function(/*String*/url) {
 	var object = this;
 	$.ajax({
 		url: url,
@@ -320,6 +355,18 @@ SqmSample.prototype.serviceTableDataRequest = function(/*String*/url) {
 			object.onTableDataError(textStatus);
 		}
 	});
+}
+
+SqmSample.prototype.sendTableDataRequest = function() {	
+	this.currentSnapshotNumber ++;
+	if ( this.currentSnapshotNumber > 120 ) {
+		this.currentSnapshotNumber = 1;
+	}
+	var url = "snapshots/nasdaq100-mdanalyzer-service-view-auto-" + this.currentSnapshotNumber + ".csv";
+	this.sendServiceTableDataRequest(url);
+	// Examples: 
+	//this.sendFilteredTableDataRequest("nasdaq100-mdanalyzer-main-view-1.csv");
+	//this.sendServiceTableDataRequest("nasdaq100-mdanalyzer-service-view-1.csv");
 }
 
 function SqmOnAppLoad() {

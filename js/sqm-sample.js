@@ -301,7 +301,7 @@ SqmSample.prototype.onTableDataError = function(/*String*/textStatus) {
 /**
  * Request for stock names.
  */
-SqmSample.prototype.sendStockListDataRequest = function(/*String*/url) {
+SqmSample.prototype.sendStockListDataRequest = function(/*String*/ url) {
 	var object = this;
 	$.ajax({
 		url: url,
@@ -322,7 +322,7 @@ SqmSample.prototype.sendStockListDataRequest = function(/*String*/url) {
  * (when the next level quote size is greater than top quote size).
  * In THIS case you cannot get all 100 symbols of nasdaq 100 in the table.
  */
-SqmSample.prototype.sendFilteredTableDataRequest = function(/*String*/url) {
+SqmSample.prototype.sendFilteredTableDataRequest = function(/*String*/ url) {
 	var object = this;
 	$.ajax({
 		url: url,
