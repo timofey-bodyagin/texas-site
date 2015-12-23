@@ -1474,10 +1474,11 @@ font-weight: bold;
 line-height: 22px;
   font-size: 18px;
 border-radius: 25px;
-    background: #335bad;
+    background: #6C6C6C;
     padding: 20px;
     width: 200px;
     height: 150px;
+  color: white!important;
 
 }
 
@@ -1507,3 +1508,6 @@ width: 60%!important;
 
 }
 
+.pager li a {
+  color: #2e2e4d!important;
+}

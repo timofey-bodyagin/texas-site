@@ -80,7 +80,7 @@ function SqmSampleTableRow(/*Integer*/ index) {
 	this.name = document.createElement("td");
 	this.name.className = cellClass + "sqm-cell-name";
 	this.name.style =  "display:none;";
-	this.row.appendChild(this.name);
+	//this.row.appendChild(this.name);
 	
 	this.bid = document.createElement("td");
 	this.bid.className = cellClass + rightClass + "sqm-cell-bid";
