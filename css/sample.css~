@@ -5,6 +5,7 @@ body {
 }
 .sqm-main-table {
 	border-collapse: collapse;
+	width:100%;
 }
 .sqm-main-table td {
 	border: gray 1px solid;
@@ -16,7 +17,7 @@ body {
 	border: 0px;
 }
 .sqm-right {
-	text-align: right;
+	text-align: left;
 }
 .sqm-main-table-top1-row-cell {
 	background: white;

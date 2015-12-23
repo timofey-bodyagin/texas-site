@@ -5,10 +5,12 @@
 function SqmSampleEntry(symbol, name, bid, bidSize, ask, askSize) {
 	this.symbol = symbol;
 	this.name = name;
-	this.bid = bid;
-	this.bidSize = bidSize;
-	this.ask = ask;
-	this.askSize = askSize;
+	bbid = parseFloat(bid);
+	this.bid = isNaN(bbid) ? "0.00" : bbid.toFixed(2);
+	this.bidSize = (bidSize.length === 0) ? "00" : bidSize;
+	aask = parseFloat(ask);
+	this.ask = isNaN(aask) ? "0.00" : aask.toFixed(2);
+	this.askSize = (askSize.length === 0) ? "00" : askSize;
 }
 
 SqmSampleEntry.prototype.getSymbol = function() {
@@ -58,7 +60,7 @@ SqmSampleTableModel.prototype.getEntryBySymbol = function(/*String*/symbol) {
 	return this.entries[index];
 }
 
-function SqmSampleTableRow(/*Integer*/index) {
+function SqmSampleTableRow(/*Integer*/ index) {
 	var cellClass = "sqm-main-table-row-cell ";
 	var rightClass = "sqm-right ";
 	var o_this = this;
@@ -103,10 +105,10 @@ function SqmSampleTableRow(/*Integer*/index) {
 SqmSampleTableRow.prototype.showExecutionReport = function(/*SqmSampleEntry*/entry, /*Bool*/isBid) {
 	var msg = msg;
 	if ( isBid ) {
-		msg = "<p><div>SOLD<br/>" + entry.getBidSize() + " " + entry.getSymbol() +
+		msg = "<p><div class=\"msg\">SOLD<br/>" + entry.getBidSize() + " " + entry.getSymbol() +
 			" Shares<br/>" + entry.getBid() + "</div></p>";
 	} else {
-		msg = "<p><div>BOUGHT<br/>" + entry.getAskSize() + " " + entry.getSymbol() +
+		msg = "<p><div  class=\"msg\">BOUGHT<br/>" + entry.getAskSize() + " " + entry.getSymbol() +
 			" Shares</br>" + entry.getAsk() + "</div></p>";
 	}
 	document.getElementById("dialog-report-text").innerHTML = msg;
@@ -185,7 +187,7 @@ SqmSampleTable.prototype.getRow = function(/*Integer*/ index) {
  * Don't use this method to manage table rows.
  * Use updateRow method instead.
  */
-SqmSampleTable.prototype.createRow = function(/*SqmSampleEntry*/entry) {
+SqmSampleTable.prototype.createRow = function(/*SqmSampleEntry*/ entry) {
 	var index = this.getRowCount();
 	var row = new SqmSampleTableRow(index);
 	this.rows[index] = row;
@@ -301,7 +303,7 @@ SqmSample.prototype.onTableDataError = function(/*String*/textStatus) {
 /**
  * Request for stock names.
  */
-SqmSample.prototype.sendStockListDataRequest = function(/*String*/url) {
+SqmSample.prototype.sendStockListDataRequest = function(/*String*/ url) {
 	var object = this;
 	$.ajax({
 		url: url,
@@ -342,7 +344,7 @@ SqmSample.prototype.sendFilteredTableDataRequest = function(/*String*/ url) {
  * In THIS case you cannot see a result of filtering by Sam's condition
  * but you can see all of 100 symbols in nasdaq 100.
  */
-SqmSample.prototype.sendServiceTableDataRequest = function(/*String*/url) {
+SqmSample.prototype.sendServiceTableDataRequest = function(/*String*/ url) {
 	var object = this;
 	$.ajax({
 		url: url,

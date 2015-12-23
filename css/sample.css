@@ -19,6 +19,9 @@ body {
 .sqm-right {
 	text-align: right;
 }
+.sqm-left {
+	text-align: left;
+}
 .sqm-main-table-top1-row-cell {
 	background: white;
 	color: black;

@@ -68,7 +68,37 @@
     		$(document).ready(SqmOnAppLoad);
     	</script>
     	
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+ 
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+    	$(document).ready(function() {
+	 table = $('#intab').DataTable( {
+		"paging": false,
+		"bSort" : false,
+		 "scrollY": "300px",
+		"searching": false,
+		
+		"oLanguage": {
+        "sEmptyTable": '',
+        "sInfoEmpty": '',
+        "sZeroRecords":  "",
+        }
+              
+	} );
+	$('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+	table.draw();
+} );
+ 
+    </script>
 
     </head>
     <body>
@@ -129,25 +159,25 @@
   </section>
   <!-- Table -->
   <section id="about1">
-                <div class="container">
+                  <div class="container responsive">
                     <div class="row">
                         <div class="col-md-12 col-sm-12"> 
                         <br>
                         
                         <h2>Spot Quote Market Making Quotes</h2>
-
-      <table width="70%">
+      <div id="scroll12" class="table-responsive">
+      <table width="100%">
 						<tr>
 							<td><h3>Nasdaq 100</h3></td>
-							<td class="sqm-right" id="datat">Dec 18 9.32 AM</td>
+							<td class="sqm-right">Dec 18 9.32 AM</td>
 						</tr>
 						</table>
-		<table id="intab" class="sqm-main-table table table-striped display" width="70%" cellpadding="5" border="0" bgcolor="white">
+		<table id="intab" class="table table-striped display" width="60%" cellpadding="5" border="0" bgcolor="white">
 			<thead>
 				
 				<tr>
-					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-symbol">Sym</td>
-					<td style="display:none;" class="sqm-main-table-top1-row-cell sqm-header sqm-header-name">Name</td>
+					<td className: 'none' class="sqm-main-table-top1-row-cell sqm-header sqm-header-symbol">Sym</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-name">Name</td>
 					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid sqm-right">Bid</td>
 					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid-shares sqm-right">Bid Shares</td>
 					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask sqm-right">Ask</td>
@@ -158,14 +188,7 @@
 			
 			</tbody>
 		</table>
-
-        <div class="container">
-
-           <ul class="pager">
-               <li><a href="#" onclick='SqmPrevious()'>Previous</a></li>
-               <li><a href="#" onclick='SqmNext()'>Next</a></li>
-           </ul>
-        </div>
+		</div>
 		<div id="dialog-report" title="Execution report">
   			<p id="dialog-report-text"></p>
 		</div>

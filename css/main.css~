@@ -323,7 +323,7 @@ a:hover {
 }
 /*Hero area 4  */
 #hero-area3 {
-  background: url('../images/mgmt/mgmt.jpg') no-repeat 50%;
+  background: url('../images/contact-new.jpg') no-repeat 50%;
   background-size: cover;
   opacity: 1;
   background-attachment: fixed;
@@ -1464,4 +1464,44 @@ div.stockTicker span.quote
 			padding-left: 10px;
 			margin-right: 5px;
 		}
-		
+div #scroll1 {
+    width: 100%;
+    height: 450px;
+    overflow: scroll;
+} 
+.msg {
+font-weight: bold;
+line-height: 22px;
+  font-size: 18px;
+border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+
+}
+
+thead tr td {
+background-color: #9999FF!important;
+border-color: #9999FF!important;
+padding-left: 5px!important;
+text-align: left!important;
+
+}
+
+table td {
+padding-right: 8px!important;
+}
+table {
+
+  font-family: 'Roboto', sans-serif;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#scroll11 {
+width: 60%!important;
+
+}
+

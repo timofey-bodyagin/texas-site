@@ -1,14 +1,18 @@
 /**
  * Spot Quote Market sample.
  */
+var sample = null;
+
 
 function SqmSampleEntry(symbol, name, bid, bidSize, ask, askSize) {
 	this.symbol = symbol;
 	this.name = name;
-	this.bid = bid;
-	this.bidSize = bidSize;
-	this.ask = ask;
-	this.askSize = askSize;
+	bbid = parseFloat(bid);
+	this.bid = isNaN(bbid) ? "0.00" : bbid.toFixed(2);
+	this.bidSize = (bidSize.length === 0) ? "00" : bidSize;
+	aask = parseFloat(ask);
+	this.ask = isNaN(aask) ? "0.00" : aask.toFixed(2);
+	this.askSize = (askSize.length === 0) ? "00" : askSize;
 }
 
 SqmSampleEntry.prototype.getSymbol = function() {
@@ -58,7 +62,7 @@ SqmSampleTableModel.prototype.getEntryBySymbol = function(/*String*/symbol) {
 	return this.entries[index];
 }
 
-function SqmSampleTableRow(/*Integer*/index) {
+function SqmSampleTableRow(/*Integer*/ index) {
 	var cellClass = "sqm-main-table-row-cell ";
 	var rightClass = "sqm-right ";
 	var o_this = this;
@@ -75,6 +79,7 @@ function SqmSampleTableRow(/*Integer*/index) {
 
 	this.name = document.createElement("td");
 	this.name.className = cellClass + "sqm-cell-name";
+	this.name.style =  "display:none;";
 	this.row.appendChild(this.name);
 	
 	this.bid = document.createElement("td");
@@ -103,18 +108,18 @@ function SqmSampleTableRow(/*Integer*/index) {
 SqmSampleTableRow.prototype.showExecutionReport = function(/*SqmSampleEntry*/entry, /*Bool*/isBid) {
 	var msg = msg;
 	if ( isBid ) {
-		msg = "<p><div>SOLD<br/>" + entry.getBidSize() + " " + entry.getSymbol() +
+		msg = "<p><div class=\"msg\">SOLD<br/>" + entry.getBidSize() + " " + entry.getSymbol() +
 			" Shares<br/>" + entry.getBid() + "</div></p>";
 	} else {
-		msg = "<p><div>BOUGHT<br/>" + entry.getAskSize() + " " + entry.getSymbol() +
+		msg = "<p><div  class=\"msg\">BOUGHT<br/>" + entry.getAskSize() + " " + entry.getSymbol() +
 			" Shares</br>" + entry.getAsk() + "</div></p>";
 	}
 	document.getElementById("dialog-report-text").innerHTML = msg;
 	$(function() {
 	    $( "#dialog-report" ).dialog({
 	    	resizable: false,
-	    	height:250,
-	    	modal: true,
+	    	height:300,
+			modal: true,
 	    	buttons: {
 	    		OK: function() {
 	    			$( this ).dialog( "close" );
@@ -166,8 +171,20 @@ SqmSampleTableRow.prototype.getEntry = function() {
 function SqmSampleTable(/*Element*/ rootElement) {
 	this.rootElement = rootElement;
 	this.rows = new Array();
+	this.table_page = 0;
+}
+SqmSampleTable.prototype.getTablePage = function() {
+	return this.table_page;
 }
 
+SqmSampleTable.prototype.NextTablePage = function() {
+	this.table_page++;
+	if(this.table_page > 10) this.table_page = 10;
+}
+SqmSampleTable.prototype.PrevTablePage = function() {
+	this.table_page--;
+	if(this.table_page < 0) this.table_page = 0;
+}
 SqmSampleTable.prototype.getRowCount = function() {
 	return this.rows.length;
 }
@@ -185,21 +202,30 @@ SqmSampleTable.prototype.getRow = function(/*Integer*/ index) {
  * Don't use this method to manage table rows.
  * Use updateRow method instead.
  */
-SqmSampleTable.prototype.createRow = function(/*SqmSampleEntry*/entry) {
+SqmSampleTable.prototype.createRow = function(/*SqmSampleEntry*/ entry) {
 	var index = this.getRowCount();
-	var row = new SqmSampleTableRow(index);
-	this.rows[index] = row;
-	row.update(entry);
-	this.rootElement.appendChild(row.getRowElement());
-	return row;
+
+		var row = new SqmSampleTableRow(index);
+		this.rows[index] = row;
+		row.update(entry);
+		this.rootElement.appendChild(row.getRowElement());
+		return row;
+
 }
 
 SqmSampleTable.prototype.updateRow = function(/*Integer*/ rowIndex, /*SqmSampleEntry*/entry) {
-	if ( rowIndex >= this.getRowCount() ) {
+	var k = this.getTablePage();
+	if ((rowIndex >= k*10 + 1) && (rowIndex < k*10 + 10)) {
+    var zzz= this.getRowCount();
+	if (rowIndex - k*10 >= zzz && zzz < 10) {
 		this.createRow(entry);
-	} else {
-		this.getRow(rowIndex).update(entry);
+
 	}
+		else {
+		this.getRow(rowIndex-k*10 -1).update(entry);
+	}
+
+}
 }
 
 /**
@@ -234,7 +260,18 @@ SqmSample.prototype.start = function() {
 	var object = this;
 	this.timeID = setTimeout(function() { object.onFirstTimerTick(); }, this.delay );
 }
-
+SqmSample.prototype.next = function() {
+	var object = this;
+	this.table.NextTablePage();
+}
+SqmSample.prototype.prev = function() {
+	var object = this;
+	this.table.PrevTablePage();
+}
+SqmSample.prototype.start = function() {
+	var object = this;
+	this.timeID = setTimeout(function() { object.onFirstTimerTick(); }, this.delay );
+}
 SqmSample.prototype.getSymbolName = function(symbol) {
 	if ( this.nameCache.hasOwnProperty(symbol) ) {
 		return this.nameCache[symbol];
@@ -342,7 +379,7 @@ SqmSample.prototype.sendFilteredTableDataRequest = function(/*String*/ url) {
  * In THIS case you cannot see a result of filtering by Sam's condition
  * but you can see all of 100 symbols in nasdaq 100.
  */
-SqmSample.prototype.sendServiceTableDataRequest = function(/*String*/url) {
+SqmSample.prototype.sendServiceTableDataRequest = function(/*String*/ url) {
 	var object = this;
 	$.ajax({
 		url: url,
@@ -370,6 +407,15 @@ SqmSample.prototype.sendTableDataRequest = function() {
 }
 
 function SqmOnAppLoad() {
-	var sample = new SqmSample();
+	sample = new SqmSample();
 	sample.start();
+
+
+}
+function SqmNext() {
+	sample.next();
+
+}
+function SqmPrevious() {
+	sample.prev();
 }
