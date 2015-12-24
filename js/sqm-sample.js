@@ -217,12 +217,13 @@ SqmSampleTable.prototype.updateRow = function(/*Integer*/ rowIndex, /*SqmSampleE
 	var k = this.getTablePage();
 	if ((rowIndex >= k*10 + 1) && (rowIndex < k*10 + 10)) {
     var zzz= this.getRowCount();
-	if (rowIndex - k*10 >= zzz && zzz < 10) {
+	if (rowIndex - k*10 >= zzz && zzz < 10-1) {
 		this.createRow(entry);
 
 	}
 		else {
-		this.getRow(rowIndex-k*10 -1).update(entry);
+			
+		this.getRow(rowIndex-k*10 - 1).update(entry);
 	}
 
 }
