@@ -5,8 +5,8 @@
         ================================================== -->
         <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="shortcut icon" href="https://spotquoting.com/wp-content/themes/Avada/assets/images/favicon.png" type="image/x-icon">
-        <title>Spot Quote</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <title>Timer Agency Template</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="Sergey" >
@@ -181,183 +181,9 @@ $(window).load(function () {
                 $("#dvStockTicker").jStockTicker({interval: 30, speed: 2});
             });
         }
-</script> 
- 
-<script>      
- //carousels
-    $(document).ready(function() {
-     
-      var time = 6; // time in seconds
-     
-      var $progressBar,
-          $bar, 
-          $elem, 
-          isPause, 
-          tick,
-          percentTime;
-     
-        //Init the carousel
-        $("#owl-demo1").owlCarousel({
-          slideSpeed : 500,
-          paginationSpeed : 500,
-          singleItem : true,
-          afterInit : progressBar,
-          afterMove : moved,
-          startDragging : pauseOnDragging
-        });
-     
-        //Init progressBar where elem is $("#owl-demo")
-        function progressBar(elem){
-          $elem = elem;
-          //build progress bar elements
-          buildProgressBar();
-          //start counting
-          start();
-        }
-     
-        //create div#progressBar and div#bar then prepend to $("#owl-demo")
-        function buildProgressBar(){
-          $progressBar = $("<div>",{
-            id:"progressBar"
-          });
-          $bar = $("<div>",{
-            id:"bar"
-          });
-          $progressBar.append($bar).prependTo($elem);
-        }
-     
-        function start() {
-          //reset timer
-          percentTime = 0;
-          isPause = false;
-          //run interval every 0.01 second
-          tick = setInterval(interval, 10);
-        };
-     
-        function interval() {
-          if(isPause === false){
-            percentTime += 1 / time;
-            $bar.css({
-               width: percentTime+"%"
-             });
-            //if percentTime is equal or greater than 100
-            if(percentTime >= 100){
-              //slide to next item 
-              $elem.trigger('owl.next')
-            }
-          }
-        }
-     
-        //pause while dragging 
-        function pauseOnDragging(){
-          isPause = true;
-        }
-     
-        //moved callback
-        function moved(){
-          //clear interval
-          clearTimeout(tick);
-          //start again
-          start();
-        }
-     
-        //pause on mouseover 
-        $elem.on('mouseover',function(){
-        isPause = true;
-        })
-        $elem.on('mouseout',function(){
-        isPause = false;
-        })
-     
-    });	
-	
-	
-	    $(document).ready(function() {
-     
-      var time = 7; // time in seconds
-     
-      var $progressBar,
-          $bar, 
-          $elem, 
-          isPause, 
-          tick,
-          percentTime;
-     
-        //Init the carousel
-        $("#owl-demo2").owlCarousel({
-          slideSpeed : 500,
-          paginationSpeed : 500,
-          singleItem : true,
-          afterInit : progressBar,
-          afterMove : moved,
-          startDragging : pauseOnDragging
-        });
-     
-        //Init progressBar where elem is $("#owl-demo")
-        function progressBar(elem){
-          $elem = elem;
-          //build progress bar elements
-          buildProgressBar();
-          //start counting
-          start();
-        }
-     
-        //create div#progressBar and div#bar then prepend to $("#owl-demo")
-        function buildProgressBar(){
-          $progressBar = $("<div>",{
-            id:"progressBar1"
-          });
-          $bar = $("<div>",{
-            id:"bar1"
-          });
-          $progressBar.append($bar).prependTo($elem);
-        }
-     
-        function start() {
-          //reset timer
-          percentTime = 0;
-          isPause = false;
-          //run interval every 0.01 second
-          tick = setInterval(interval, 10);
-        };
-     
-        function interval() {
-          if(isPause === false){
-            percentTime += 1 / time;
-            $bar.css({
-               width: percentTime+"%"
-             });
-            //if percentTime is equal or greater than 100
-            if(percentTime >= 100){
-              //slide to next item 
-              $elem.trigger('owl.next')
-            }
-          }
-        }
-     
-        //pause while dragging 
-        function pauseOnDragging(){
-          isPause = true;
-        }
-     
-        //moved callback
-        function moved(){
-          //clear interval
-          clearTimeout(tick);
-          //start again
-          start();
-        }
-     
-        //pause on mouseover 
-        $elem.on('mouseover',function(){
-        isPause = true;
-        })
-        $elem.on('mouseout',function(){
-        isPause = false;
-        })
-     
-    });	       
-</script>       
+</script>        
+        
+        
     </head>
     <body>
         <!--
@@ -378,7 +204,7 @@ $(window).load(function () {
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a href="/" >
+                        <a href="index.html" >
                             <img src="images/logo.png" alt="">
                         </a>
                     </div>
@@ -389,38 +215,38 @@ $(window).load(function () {
                     <div class="main-menu">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="/" >Home</a>
+                                <a href="index.html" >Home</a>
                             </li>
                             <li><a href="about.html">Who We Are</a></li>
                             <li><a href="patents.html">Patent Portfolio</a></li>
                             <li><a href="management.html">Management</a></li>
                             <li><a href="finance.html">Trading Platform</a></li>
                             
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="contact.html">Contact US</a></li>
                         </ul>
                     </div>
                 </nav>
                 <!-- /main nav -->
             </div>
         </header>
-        <section id="ticker">
+        <section id="about">
                 <div class="container">
                     <div class="row row1">
-                        <div class="col-md-6 col-sm-6 col1" style="width: 100%; padding: 0;">
-							  <div id="StockTickerContainer" style="height: 45px; line-height: 42px; overflow: hidden; background: white" style="width:auto">
-									<div id='dvStockTicker' class='stockTicker' >
-									</div>
-							  </div>
-						</div>
-					</div>
-		</section>
+                        <div class="col-md-12 col-sm-12 col1">
+  <div id="StockTickerContainer" style="height: 52px; line-height: 42px; overflow: hidden; background: white" style="width:auto">
+        <div id='dvStockTicker' class='stockTicker' >
+        </div>
+  </div>
+  </div>
+  </div>
+   </section>
         <!--
         
             ==================================================
             Slider Section Start
             ================================================== -->
 				
-            <section id="about">
+            <section id="about1">
                 <div class="container">
                     <div class="row row1">
                         <div class="col-md-6 col-sm-6 col1">
@@ -430,43 +256,26 @@ $(window).load(function () {
                             </div>
 							
 							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                             
-								<div id="owl-demo1" class="owl-carousel owl-theme">
-								 
-								  <div class="item"><a href="one-cent-market.html"><img src="images/gal1-slide1.png" alt=""></a></div>
-								  <div class="item"><a href="hide-side-order.html"><img src="images/gal1-slide2.png" alt=""></a></div>
-								  <div class="item"><a href="spot-call-market.html"><img src="images/gal1-slide3.png" alt=""></a></div>
-								 
-								</div>
-
-
+                                <img alt="" src="images/about/about.jpg">
                             </div>
 							
 							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                                <a href="sam-balabon.html"><img alt="" src="images/sam.png"></a>
+                                <img alt="" src="images/about/about.jpg">
                             </div>
 							
                         </div>
                         <div class="col-md-6 col-sm-6 col1">
 						
 							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-
-                                <div id="owl-demo2" class="owl-carousel owl-theme">
-								 
-								  <div class="item"><a href="mark-cuban.html"><img src="images/gal2-slide1.png" alt=""></a></div>
-								  <div class="item"><a href="joe-saluzzi.html"><img src="images/gal2-slide2.png" alt=""></a></div>
-								  <div class="item"><a href="sec-chairman.html"><img src="images/gal2-slide3.png" alt=""></a></div>
-								  <div class="item"><a href="jeffrey-solomon.html"><img src="images/gal2-slide4.png" alt=""></a></div>
-								 
-								</div>
+                                <img alt="" src="images/about/about.jpg">
                             </div>
                             
 							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                                <a href="craig-kravetz.html"><img alt="" src="images/craig.png"></a>
+                                <img alt="" src="images/about/about.jpg">
                             </div>
 							
 							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                                <img src="images/fl2.jpg" alt="">
+                                <img src="images/fl1.jpg" alt="">
                             </div>
 							
                         </div>

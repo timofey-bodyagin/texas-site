@@ -1,183 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="software development, software developers, outsourcing, offshore software development, software development company, software development firm, software development services" />
-    <meta name="author" content="Sergey" >
-    <title>spotquoting.com</title>
-	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.transitions.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/72.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/57.png">
-<!-- 
- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" href="https://spotquoting.com/wp-content/themes/Avada/assets/images/favicon.png" type="image/x-icon">
+        <title>Contact Us - Spot Quote</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Sergey" >
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
 
-  ga('create', 'UA-39630953-1', 'auto');
-  ga('send', 'pageview');
-
-</script> -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script type='text/javascript' src='js/jquery-1.6.4.js'></script>
-
-</head><!--/head-->
-<body id="home" class="homepage">
-
-
-    <header id="top-header" class="navbar-inverse navbar-fixed-top" >
-            <div id="head" class="container">
+        <script src="js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="js/slider.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
                 <div class="navbar-header">
                     <!-- responsive nav button -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                     </button>
                     <!-- /responsive nav button -->
                     
                     <!-- logo -->
                     <div class="navbar-brand">
-                        <a class="smooth-scroll" data-section="index.html" href="index.html" >
-                            <img src="images/logo.png" alt="SPOTQUOTING">
+                        <a href="/" >
+                            <img src="images/logo.png" alt="">
                         </a>
                     </div>
                     <!-- /logo -->
-                 </div>
-
-                <!-- main nav -->
+                </div>
+                <!-- main menu -->
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                    <div class="fusion-main-menu">
-                        <ul id="nav" class="nav navbar-nav nav-pills">
-                            <li class="scroll"><a href="index.html" data-section="index.html">Home</a></li>
-                            <li class="scroll"><a href="about.html" data-section="about.html">Who we are</a></li>
-                            <li class="scroll"><a href="patents.html" data-section="patents.html">Patent Portfolio</a></li>
-                            <li class="scroll"><a href="management.html" data-section="management.html">Management</a></li>
-                            <li class="scroll"><a href="finance.html" data-section="finance.html">Trading Platform</a></li>
-                            <li class="scroll"><a href="contact.html" data-section="contact.html">Contact US</a></li>
-                            <li class="scroll"><a href="contact.html" data-section="contact.html"></a></li>
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="/" >Home</a>
+                            </li>
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="patents.html">Patent Portfolio</a></li>
+                            <li><a href="management.html">Management</a></li>
+                            <li><a href="finance.html">Trading Platform</a></li>
                             
+                            <li><a class="active" href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
                 <!-- /main nav -->
+            </div>
+        </header>
+        
+        <!--
+        ==================================================
+        Slider Section Start
+        ================================================== -->
+        
+        <section id="hero-area3" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="block wow fadeInUp" data-wow-delay=".3s">
+                            
+                            <!-- Slider -->
+                            <section class="cd-intro">
+                                
+                            </section> <!-- cd-intro -->
+                                <!-- /.slider -->
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--/#main-slider-->
+
+
+        <!-- 
+        ================================================== 
+            Contact Section Start
+        ================================================== -->
+        <section id="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="block">
+                            <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Get In Touch With Us!</h2>
+                            <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                                
+                            </p>
+                            <div class="contact-form">
+                                <form id="contact-form" method="post" action="sendmail.php" role="form">
+                        
+                                    <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                                        <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+                                    </div>
+                                    
+                                    <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                                        <input type="email" placeholder="Your Email" class="form-control" name="email" id="email" >
+                                    </div>
+                                    
+                                    <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1s">
+                                        <input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+                                    </div>
+                                    
+                                    <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.2s">
+                                        <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>    
+                                    </div>
+                                    
+                                    
+                                    <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                                        <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Send Message">
+                                    </div>                      
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                         <div class="row">  <!-- row1 -->
+                         <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Contact Us</h2>
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/people.png" alt=""> 
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>Sam Balabon
+                            <br>Chief Executive Officer
+                            <br>Austin, TX
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="row">   <!-- row2 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/phone.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>512 585-4589
+                            
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        
+                        <div class="row">   <!-- row3 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/mail.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>sbalabon@spotqouting.com
+                            
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        
+                        <div class="row">   <!-- row4 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/people.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>Jim O‘Reilly
+                            <br>Chief Marketing Officer
+                            <br>Rockville Centre, NY
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        
+                        <div class="row">   <!-- row5 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/phone.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>516 287-0946
+                           
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        
+                        <div class="row">   <!-- row6 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/mail.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>joreilly@spotqouting.com
+                            
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        
+                        <div class="row">   <!-- row7 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/people.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>Craig Kravetz
+                            <br>Head of Customer Onboarding 
+                            <br>Montclair, NJ
+                            
+                            </div>
+                            
+                           
+                        </div>
+                        
+                        <div class="row">   <!-- row8 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/phone.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>646 204-9382
+                           
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="row">   <!-- row9 -->
+                         
+                            <div class="col-md-1">
+                            <br>
+                            <img src="../images/mail.png" alt=""> &nbsp;&nbsp;&nbsp;&nbsp;
+                            
+                            </div>
+                            <div class="col-md-5">
+                            <br>
+                            <p>ckravetzy@spotqouting.com
+                           
+                            </div>
+                            
+                           
+                        </div>
+                    </div> <!-- column end -->
+                </div>
                
             </div>
-            
-        </header>
-<section id="img1">
-<div id="container">
-    <img class="img-responsive" src="../images/contact-new.jpg" alt="Contacts" />
-</div>
- </section>
- <section id="img2">
-  <div class="row">
-  <div class="span8">
-  		<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
-		<div class="row">
-		<label for="name">Your name:</label><br />
-		<input id="name" class="input" name="name" type="text" value="" size="70" /><br />
-		</div>
-		<div class="row">
-		<label for="email">Your email:</label><br />
-		<input id="email" class="input" name="email" type="text" value="" size="70" /><br />
-		</div>
-		<div class="row">
-		<label for="subj">Subject:</label><br />
-		<input id="subj" class="input" name="email" type="text" value="" size="70" /><br />
-		</div>
-		<div class="row">
-		<label for="message">Your message:</label><br />
-		<textarea id="message" class="input" name="message" rows="7" cols="69"></textarea><br />
-		</div>
-		<input id="submit_button" type="submit" value="Send email" />
-		</form>				    
-      
-      
-      
-      
-      
-      </div>
-      <div class="span4">
-      <h5>Sam Balabon</h5>
-<h5>Chief Executive Officer
-Austin, TX</h5>
+        </section>
 
-<h5>phone 512 585-4589</h5>
-
-<h5>mailsbalabon@spotqouting.com</h5>
-
-<h5>Jim O‘Reilly</h5>
-<h5>Chief Marketing Officer</h5>
-<h5>Rockville Centre, NY</h5>
-
-<h5>phone516 287-0946</h5>
-
-<h5>mailjoreilly@spotqouting.com</h5>
-
-<h5>locationCraig Kravetz</h5>
-<h5>Head of Customer Onboarding</h5>
-<h5>Montclair, NJ</h5>
-
-<h5>phone646 204-9382</h5>
-
-<h5>mailckravetzy@spotqouting.com</h5>
-</div>
-      
-   <br style="clear: both;">
-</div>
-
- 
- 
- </section>
- <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-					
-                    <p class="text-left">
-                        &copy; Copyright 2015 Spot Quote | All Rights Reserved.
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a target="_blank" href="#"><img src="images/fb.png" alt="" width="42" height="42"></a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a target="_blank" href="#"><img src="images/tw.png" alt="" width="42" height="42"></a>
-                        
-                    </p>
-                    
-					
-                   
-					
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright 2015 Spot Quote | All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="http://wwww.fb.com/" class="Facebook">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://wwww.twitter.com/" class="Twitter">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->       
-</body>
-</html>
-
+            </footer> <!-- /#footer -->
+                
+        </body>
+    </html>
