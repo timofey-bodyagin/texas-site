@@ -24,19 +24,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="js/jquery.js"></script>
+    <script src="js/develop.js"></script>
 
 </head>
 <script>
 $( document ).ready(function() {
-    var cell = document.getElementById("i11");
-    var z = cell.innerHTML;
-    for(var k = 0; k < 130; k++) {
-    cell.innerHTML = '';
-    cell.innerHTML = (parseFloat(z) + k).toFixed(2);
-
-};
+   // var cell = document.getElementById("i11");
+  //  var z = cell.innerHTML;
+   // for(var k = 0; k < 130; k++) {
+  //  cell.innerHTML = '';
+  //  cell.innerHTML = (parseFloat(z) + k).toFixed(2);
 
 
+var to =  new TableObject();
+to.refresh();
+to.SendRequest();
+to.starttimer();
 });
 
 </script>
@@ -88,8 +91,8 @@ $( document ).ready(function() {
             <div class="col-md-3">
                 <p class="lead">Trading Information</p>
                 <div class="list-group">
-                    <a href="index.html" class="list-group-item active">Spot Quotes</a>
-                    <a href="market_depth.html" class="list-group-item">Market Depth Data</a>
+                    <a href="index.html" class="list-group-item ">Spot Quotes</a>
+                    <a href="market_depth.html" class="list-group-item active">Market Depth Data</a>
                     <a href="#" class="list-group-item">Category 3</a>
                 </div>
             </div>
@@ -100,9 +103,9 @@ $( document ).ready(function() {
                     <img class="img-responsive" src="../images/line.png" alt="">
                     <div class="caption-full">
                         <h4 class="pull-right"></h4>
-                        <h4><a href="#">Symbol</a>
+                        <h4><a href="#">Market Depth Data</a>
                         </h4>
-            <table id="intab" width="100%" cellpadding="8px" border="0">
+            <table id="market" width="100%" cellspacing="18px" border="0">
             <thead>
                 
                 <tr>
@@ -118,11 +121,153 @@ $( document ).ready(function() {
                     
                 </tr>
             </thead>
-            <tbody>
-            
+            <tbody id="market_body">
+            <!-- row0 -->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row1 -->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 2-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 4-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 5-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 6-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>  
+                <!-- row 7-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 8-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>
+                <!-- row 9-->
+                <tr>
+                    <td>MSFT</td>
+                    <td>32,000</td>
+                    <td>43,000</td>
+                    <td>23,000</td>
+                    <td>$52.01</td>
+                    <td>$52.02</td>
+                    <td>46,000</td>
+                    <td>31,000</td>
+                    <td>50,000</td>
+                </tr>   
+                <!-- empty row-->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>               
             </tbody>
         </table>
-                    </div>
+      <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-9">
+      <h5 class="text-right">Navigation</h5>
+         <div class="btn-group pull-right">
+         <button type="button" class="btn btn-primary" style="height:30px;" onclick="Previous()">Prev</button>
+         <button type="button" class="btn btn-primary" onclick="Next()" style="height:30px;">Next</button>
+    
+         </div>
+      </div>          
+             </div>
                     <div class="ratings">
                         <p class="pull-right"></p>
                         <p>

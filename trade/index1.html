@@ -1,0 +1,37 @@
+<!-- 
+	codething.ru - полезные штучки для веб-разработчика 
+
+	AJAX и jQuery. Динамическое обновление контента. Основы.
+	Пример 1. Динамическое обновление контента по таймеру
+-->
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+<script src="js/jquery.js"></script>
+</head>
+
+<body>
+	
+	<div id="content"></div>
+	
+	<script>
+		function show()
+		{
+			$.ajax({
+				url: "time.php",
+				cache: false,
+				success: function(html){
+					$("#content").html(html);
+				}
+			});
+		}
+	
+		$(document).ready(function(){
+			show();
+			setInterval('show()',1000);
+		});
+	</script>
+	
+</body>
+</html>
