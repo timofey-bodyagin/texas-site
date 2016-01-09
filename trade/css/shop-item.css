@@ -37,12 +37,29 @@ background-color: black;
 color: white;
 
 }
+h5 {
 
+color: white;
+
+}
 table thead {
 
 background-color: black;
 color: #FF6600;
 font-weight: bold;
+
+}
+
+table  td {
+
+text-align: right;
+
+}
+
+td.left {
+
+text-align: left!important;
+  padding-left: 10px;
 
 }
 

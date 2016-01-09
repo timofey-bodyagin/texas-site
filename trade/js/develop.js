@@ -10,7 +10,7 @@ function TableObject() {
   
   this.table_page = 0;
   stream = new Array();
-  for( i = 0; i < 100; i++) {
+  for( i = 0; i < 108; i++) {
      stream[i] = [];
 	 for( j = 0; j < 10; j++) {
 		if(i < 10) stream[i][j] = '1xxxx';
@@ -37,7 +37,12 @@ var table=document.getElementById("market");
      
      for( j = 0; j < 9; j++) {
      d = this.table_page*10 +i;
+     if(j==4 || j ==5) { table.rows[i].cells.item(j).innerHTML = (parseFloat(stream[d][j])).toFixed(2); }
+     else {
      table.rows[i].cells.item(j).innerHTML = stream[d][j];
+    
+
+ };
 
      }
 
@@ -49,7 +54,7 @@ var table=document.getElementById("market");
 
 TableObject.prototype.starttimer = function() {
 	var object = this;
-	this.timeID = setInterval(function() { object.SendRequest(); }, 5000 );
+	this.timeID = setTimeout(function() { object.SendRequest(); }, 1500 );
 	object.refresh();
 }
 
@@ -64,7 +69,7 @@ TableObject.prototype.SendRequest = function() {
 			
         var id = data[0][1];              //get id
         var vname = data[1][1];
-        for( i = 0; i < 100; i++) {
+        for( i = 0; i < 107; i++) {
         
 	        for( j = 0; j < 10; j++) {
 		
@@ -73,6 +78,7 @@ TableObject.prototype.SendRequest = function() {
 	        }
         }
         object.refresh();
+        object.starttimer();
 		},
 	  error: function(jqXHR, textStatus, errorThrown) {
 			object.onTableDataError(textStatus);
@@ -93,7 +99,7 @@ TableObject.prototype.getTablePage = function() {
 
 TableObject.prototype.NextTablePage = function() {
 	this.table_page++;
-	if(this.table_page > 10) this.table_page = 10;
+	if(this.table_page > 9) this.table_page = 9;
 	this.refresh();
 }
 TableObject.prototype.PrevTablePage = function() {
