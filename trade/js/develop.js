@@ -268,6 +268,9 @@ MDApp.prototype.sendMarketDataRequest = function() {
 MDApp.prototype.getTotalPages = function() {
 	var entryCount = this.tableModel.getEntryCount();
 	var rowCount = this.tableView.getRowCount();
+	if ( rowCount == 0 || entryCount == 0 ) {
+		return 1;
+	}
 	var pages = Math.floor(entryCount / rowCount);
 	if ( entryCount % rowCount != 0 ) {
 		pages ++;
@@ -286,6 +289,10 @@ MDApp.prototype.refreshTableView = function() {
 			var entry = this.tableModel.getEntryByIndex(entryIndex);
 			this.tableView.updateRow(i, entry);
 		}
+	}
+	var dummy = document.getElementById("timestamp");
+	if ( dummy && this.tableModel.getTimestamp() ) {
+		dummy.innerHTML = this.tableModel.getTimestamp();
 	}
 }
 
