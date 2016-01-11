@@ -1,49 +1,96 @@
+<?php
 
-<?php 
+require_once 'config.php';
+error_reporting(E_ALL);
+ini_set('display_errors', DEBUG ? true : false);
 
-  require_once 'config.php';
-  include 'phplib/parser.php';
-  include 'phplib/updater.php';
-  error_reporting(-1) ;
-  ini_set('display_errors', 'On'); 
+class MDEntry {
+	private $Symbol;
+	private $Asks;
+	private $Bids;
+	private $Timestamp;
 
-  //--------------------------------------------------------------------------
-  // 1) Connect to mysql database using mysqli
-  //--------------------------------------------------------------------------
-  
-    $mysqli = new mysqli($host,$user,$pass,$databaseName);
+	public function getSymbol() {
+		return $this->Symbol;
+	}
+	
+	public function getAsksAsArray($maxLevels) {
+		return $this->parseQuotes($this->Asks, $maxLevels);
+	}
+	
+	public function getBidsAsArray($maxLevels) {
+		return $this->parseQuotes($this->Bids, $maxLevels);
+	}
+	
+	public function getTimestamp() {
+		return $this->Timestamp;
+	}
+	
+	private function parseQuotes($plainText, $maxLevels) {
+		$quotes = array();
+		$plainText = trim($plainText);
+		foreach ( explode("\n", $plainText) as $line ) {
+			$dummy = explode(",", trim($line));
+			if ( sizeof($dummy) != 2 ) {
+				throw new Exception("Quote data corrupted: " . $this->Symbol);
+			}
+			$quotes[] = array(sprintf("%0.2f", $dummy[0]), $dummy[1]);
+			if ( sizeof($quotes) >= $maxLevels ) {
+				break;
+			}
+		}
+		return $quotes;
+	}
+	
+}
+try {
+	echo json_encode(main(), DEBUG ? JSON_PRETTY_PRINT : 0);
+} catch ( Exception $e ) {
+	echo json_encode(error_response('Unhandled exception [M]: ' . $e->getMessage()));
+}
 
-    if (mysqli_connect_error()) {
-    die('Connection error: (' . mysqli_connect_errno() . ') '
-            . mysqli_connect_error());
-    }
-  //--------------------------------------------------------------------------
-  // 2) Query database for data
-  //--------------------------------------------------------------------------
-    $result = mysqli_query($mysqli, "SELECT * FROM $tableName");          //query
+function error_response($message) {
+	return array(
+		'error' => 1,
+		'error_message' => $message,
+		'timestamp' => null,
+		'data' => array(),
+	);
+}
 
-    $row_cnt = $result->num_rows;
-  // if we have rusults
-  if($row_cnt != 0) {
-  //--------------------------------------------------------------------------
-  // 3) echo result as json 
-  //--------------------------------------------------------------------------
-  $product = parse($result);
-  }
-  else {    //if rusult is empty we fill empty data
-
-    for($c=0; $c < 109 ; $c++) {
-  
-       $product[$c] = array("No data", "0", "0", "0", "0", "0", "0", "0", "0");
-
-
-     }
-  }
-    
-
-  
- 
-    mysqli_free_result($result);
-    mysqli_close($mysqli); 
-    echo json_encode($product);
-?>
+function main() {
+	try {
+		$dbh = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME,
+				DB_USER, DB_PASS, array(PDO::ATTR_PERSISTENT => true));
+		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	} catch ( PDOException $e ) {
+		return error_response('Database error [C]: ' . $e->getMessage());
+	}
+	
+	if ( isset($_GET['timestamp']) ) {
+		$sth = $dbh->prepare('SELECT * FROM `Quotes` WHERE `Timestamp` > ?');
+		$sth->execute(array($_GET['timestamp']));
+	} else {
+		$sth = $dbh->prepare('SELECT * FROM `Quotes`');
+		$sth->execute();
+	}
+	$sth->setFetchMode(PDO::FETCH_CLASS, 'MDEntry');
+	$timestamp = null;
+	$data = array();
+	while ( $entry = $sth->fetch() ) {
+		if ( $timestamp === null || strcmp($timestamp, $entry->getTimestamp()) < 0 ) {
+			$timestamp = $entry->getTimestamp();
+		}
+		$data[] = array(
+			'sym' => $entry->getSymbol(),
+			'ask' => $entry->getAsksAsArray(3),
+			'bid' => $entry->getBidsAsArray(3)
+		);
+	}
+	return array(
+		'error' => 0,
+		'error_message' => '',
+		'timestamp' => $timestamp,
+		'data' => $data,
+	);
+}
