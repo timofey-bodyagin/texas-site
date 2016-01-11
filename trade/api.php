@@ -2,8 +2,8 @@
 <?php 
 
   require_once 'config.php';
-  include 'parser.php';
-  include 'updater.php';
+  include 'phplib/parser.php';
+  include 'phplib/updater.php';
   error_reporting(-1) ;
   ini_set('display_errors', 'On'); 
 
@@ -23,14 +23,14 @@
     $result = mysqli_query($mysqli, "SELECT * FROM $tableName");          //query
 
     $row_cnt = $result->num_rows;
-
+  // if we have rusults
   if($row_cnt != 0) {
   //--------------------------------------------------------------------------
   // 3) echo result as json 
   //--------------------------------------------------------------------------
   $product = parse($result);
   }
-  else {
+  else {    //if rusult is empty we fill empty data
 
     for($c=0; $c < 109 ; $c++) {
   
