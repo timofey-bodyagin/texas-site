@@ -3,49 +3,114 @@
  */
 
 var pager = null;
-var stream = Array();
+var entries = Array();
+
+function DataEntry(symbol, bid2, bid1, bidSize, bidPrice, askPrice, askSize, ask1, ask2) {
+	this.symbol = symbol;
+	this.bid2 = bid2;
+	this.bid1 = bid1;
+	this.bidSize = bidSize;
+	this.bidPrice = bidPrice;
+	this.ask2 = ask2;
+	this.ask1 = ask1;
+	this.askSize = askSize;
+	this.askPrice = askPrice;
+	this.ss = "";
+	
+}
+
+DataEntry.prototype.getSymbol = function() {
+	return this.symbol;
+}
+
+DataEntry.prototype.getBid1 = function() {
+	return this.bid1;
+}
+
+DataEntry.prototype.getBid2 = function() {
+	return this.bid2;
+}
+
+DataEntry.prototype.getBidSize = function() {
+	return this.bidSize;
+}
+
+DataEntry.prototype.getBidPrice = function() {
+	return this.bidPrice;
+}
+
+DataEntry.prototype.getAsk1 = function() {
+	return this.ask1;
+}
+DataEntry.prototype.getAsk2 = function() {
+	return this.ask2;
+}
+DataEntry.prototype.getAskSize = function() {
+	return this.askSize;
+}
+DataEntry.prototype.getAskPrice = function() {
+	return this.askPrice;
+}
 
 
 function TableObject() {
   
   this.table_page = 0;
-  stream = new Array();
-  for( i = 0; i < 119; i++) {
-     stream[i] = [];
-	 for( j = 0; j < 10; j++) {
-		if(i < 10) stream[i][j] = ' ';
-		else stream[i][j] = ' ';
-		
-	 }
-  }
-  for( i = 30; i < 50; i++) {
-     stream[i] = [];
-	 for( j = 0; j < 10; j++) {
-		
-		stream[i][j] = ' ';
-		
-	 }
-  }
+  this.entries = new Array();
+  
+  this.timestamp = '';
+  
+  
   pager = this;	
 }
+TableObject.prototype.updateEntryBySymbol = function(entry) {
+	var index = this.getEntryIndexBySymbol(entry.symbol);
+	var length = this.entries.length;
+	if ( index < 0 ) {
+		entries[length+1] = entry;
+	}
+	else {
+		entries[index] = entry;
+	}
+	this.refresh();
+}
+TableObject.prototype.getEntryIndexBySymbol = function(/*String*/ symbol) {
+	var length = this.entries.length;
+	for ( var i = 0; i < length; i ++ ) {
+		var entry = this.entries[i];
+		if ( entry.symbol == symbol ) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+TableObject.prototype.getEntryBySymbol = function(/*String*/symbol) {
+	var index = this.getEntryIndexBySymbol(symbol);
+	if ( index < 0 ) {
+		throw "No symbol entry found: " + symbol;
+	}
+	return this.entries[index];
+}
+
+
 
 TableObject.prototype.refresh = function() {
 
-var table=document.getElementById("market");
-document.getElementById("timestamp").innerHTML= stream[0][9];
-  for( i = 0; i < 10; i++) {
+var table = document.getElementById("market");
+document.getElementById("timestamp").innerHTML= '';
+ 
+for( i = 0; i < 10; i++) {
      
      for( j = 0; j < 9; j++) {
      d = this.table_page*10 +i;
-     if((j==4 || j ==5) && (stream[d][j] != ' ')) { 
-     	
-     	table.rows[i+1].cells.item(j).innerHTML = (parseFloat(stream[d][j])).toFixed(2); 
-     }
-     else {
-     	
-        table.rows[i+1].cells.item(j).innerHTML = stream[d][j];
+     
+     	if(this.entries == "undefined")
+          {table.rows[i+1].cells.item(j).innerHTML = this.entries[d][j];}
+      else 
+      	{table.rows[i+1].cells.item(j).innerHTML = ' ';}
         
-     }
+    
 
 
   }
@@ -53,6 +118,9 @@ document.getElementById("timestamp").innerHTML= stream[0][9];
 
 }
 }
+
+
+
 
 TableObject.prototype.starttimer = function() {
 	var object = this;
@@ -64,22 +132,42 @@ TableObject.prototype.SendRequest = function() {
 	var object = this;
 	$.ajax({                                      
       url: 'api.php',                  //the script to call to get data          
-      data: "",                        //you can insert url argumnets here to pass to api.php
-                                       //for example "id=5&parent=6"
+      data: "{2015-12-07 17:27:22.000}",                        //you can insert url argumnets here to pass to api.php
+      type: "GET",                                 //for example "id=5&parent=6"
       dataType: 'json',                //data format      
       success: function(data) {
-			
-        var id = data[0][1];              //get id
-        var vname = data[1][1];
-        var size = data.length;
-        for( i = 0; i < size; i++) {
+		var size = data.data.length;
+		var ask2 = " ";
+        var ask1 = " ";
+        var askSize = " ";
+        var askPrice = " ";
+
+        var bid2 = " ";
+        var bid1 = " ";
         
-	        for( j = 0; j < 10; j++) {
-		
-		        stream[i][j] = data[i][j];
-		
-	        }
+        var bidSize = " ";
+        var bidPrice = " ";	
+
+        for(var i =0; i < size; i++) {
+        var sym = data.data[i].sym;
+        var ask2 = data.data[i].ask[0][1];
+        var ask1 = data.data[i].ask[1][1];
+        if(typeof(data.data[i].ask[2]) !== "undefined" )  {
+        var askSize = data.data[i].ask[2][1];
+        var askPrice = data.data[i].ask[2][0];
         }
+
+        var bid2 = data.data[i].bid[0][1];
+        var bid1 = data.data[i].bid[1][1];
+        if(data.data[i].bid[2] != null)  {
+        var bidSize = data.data[i].bid[2][1];
+        var bidPrice = data.data[i].bid[2][0];
+    }
+        var entry = new DataEntry(sym, bid1, bid2, bidSize, bidPrice, askPrice, askSize, ask1, ask2);
+        var z = 1;
+        updateEntryBySymbol(entry);
+	     }   
+        
         object.refresh();
         object.starttimer();
 		},
