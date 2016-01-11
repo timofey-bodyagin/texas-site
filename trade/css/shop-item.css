@@ -65,6 +65,8 @@ text-align: left!important;
 
 td {
     padding: 2px; 
+    border: 1px solid #333;
+    height: 25px;
 }
 td.addon  {
 

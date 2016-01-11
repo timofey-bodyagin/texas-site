@@ -212,6 +212,10 @@ MDApp.prototype.onTimerTick = function() {
 	this.sendMarketDataRequest();
 }
 
+MDApp.prototype.outputTimeStamp = function(timestamp) {
+	document.getElementById("timestamp").innerHTML = timestamp.split(".")[0];
+}
+
 MDApp.prototype.onMarketDepthData = function(/*Object*/response) {
 	if ( response.error == 1 ) {
 		alert("API error: " + response.error_message);
@@ -220,6 +224,7 @@ MDApp.prototype.onMarketDepthData = function(/*Object*/response) {
 		var data = response.data;		
 		if ( timestamp != null ) {
 			this.tableModel.setTimestamp(timestamp);
+			this.outputTimeStamp(timestamp);
 		}
 		for ( var i = 0; i < data.length; i ++ ) {
 			var x = data[i];
