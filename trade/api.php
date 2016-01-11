@@ -30,13 +30,16 @@ class MDEntry {
 		$quotes = array();
 		$plainText = trim($plainText);
 		foreach ( explode("\n", $plainText) as $line ) {
-			$dummy = explode(",", trim($line));
-			if ( sizeof($dummy) != 2 ) {
-				throw new Exception("Quote data corrupted: " . $this->Symbol);
-			}
-			$quotes[] = array(sprintf("%0.2f", $dummy[0]), $dummy[1]);
-			if ( sizeof($quotes) >= $maxLevels ) {
-				break;
+			$line = trim($line);
+			if ( strlen($line) > 0 ) {
+				$dummy = explode(",", trim($line));
+				if ( sizeof($dummy) != 2 ) {
+					throw new Exception("Quote data corrupted: " . $this->Symbol);
+				}
+				$quotes[] = array(sprintf("%0.2f", $dummy[0]), $dummy[1]);
+				if ( sizeof($quotes) >= $maxLevels ) {
+					break;
+				}
 			}
 		}
 		return $quotes;
