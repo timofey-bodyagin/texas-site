@@ -214,7 +214,7 @@ MDApp.prototype.onTimerTick = function() {
 
 MDApp.prototype.outputTimeStamp = function(timestamp) {
 	var t = timestamp.split(":");
-	//document.getElementById("timestamp").innerHTML = t[0]+"ddd";
+	document.getElementById("timestamp").innerHTML = t[0];
 }
 
 MDApp.prototype.onMarketDepthData = function(/*Object*/response) {
@@ -225,7 +225,7 @@ MDApp.prototype.onMarketDepthData = function(/*Object*/response) {
 		var data = response.data;		
 		if ( timestamp != null ) {
 			this.tableModel.setTimestamp(timestamp);
-			this.outputTimeStamp(timestamp);
+			
 		}
 		for ( var i = 0; i < data.length; i ++ ) {
 			var x = data[i];
@@ -278,10 +278,12 @@ MDApp.prototype.getTotalPages = function() {
 		return 1;
 	}
 	var pages = Math.floor(entryCount / rowCount);
+	var p = entryCount % rowCount;
 	if ( entryCount % rowCount != 0 ) {
 		pages ++;
-		return pages;
+		
 	}
+	return pages;
 }
 
 MDApp.prototype.refreshTableView = function() {

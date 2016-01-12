@@ -143,5 +143,9 @@ width:10%;
 
 }
 
-
+.bn {
+//border: 2px solid #333;
+//padding:2px;
+background-color: transparent;
+}
 
