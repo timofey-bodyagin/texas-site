@@ -213,7 +213,8 @@ MDApp.prototype.onTimerTick = function() {
 }
 
 MDApp.prototype.outputTimeStamp = function(timestamp) {
-	document.getElementById("timestamp").innerHTML = timestamp.split(".")[0];
+	var t = timestamp.split(":");
+	//document.getElementById("timestamp").innerHTML = t[0]+"ddd";
 }
 
 MDApp.prototype.onMarketDepthData = function(/*Object*/response) {
@@ -297,7 +298,7 @@ MDApp.prototype.refreshTableView = function() {
 	}
 	var dummy = document.getElementById("timestamp");
 	if ( dummy && this.tableModel.getTimestamp() ) {
-		dummy.innerHTML = this.tableModel.getTimestamp();
+		dummy.innerHTML = ((this.tableModel.getTimestamp()).split("."))[0];
 	}
 }
 
