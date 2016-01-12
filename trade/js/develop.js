@@ -280,6 +280,7 @@ MDApp.prototype.getTotalPages = function() {
 	var pages = Math.floor(entryCount / rowCount);
 	if ( entryCount % rowCount != 0 ) {
 		pages ++;
+		return pages;
 	}
 }
 
