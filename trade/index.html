@@ -1,249 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form with HTML5 and CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+                        
+            <header>
+                <h1><span>Trading Platform </span>Login and Registration</h1>
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1>Log in</h1> 
+                                <p> 
+                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
+                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+                                <p class="login button"> 
+                                    <input type="submit" value="Login" /> 
+								</p>
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">Join us</a>
+								</p>
+                            </form>
+                        </div>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Spot Quoting Trading Platform</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/shop-item.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/jquery.js"></script>
-
-</head>
-<script>
-$( document ).ready(function() {
-    var cell = document.getElementById("i11");
-    var z = cell.innerHTML;
-    for(var k = 0; k < 130; k++) {
-    cell.innerHTML = '';
-    cell.innerHTML = (parseFloat(z) + k).toFixed(2);
-
-};
-
-
-});
-
-</script>
-<body>
-
-    <?php include "tpl/navigation.html" ?>
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <?php include "tpl/left_menu.html" ?>
-
-            <div class="col-md-9">
-
-                <div class="thumbnail">
-                    <img class="img-responsive" src="../images/line.png" alt="">
-                    <div class="caption-full">
-                        <h4 class="pull-right"></h4>
-                        <h4><a href="#">Symbol</a>
-                        </h4>
-            <table id="intab" width="100%" cellpadding="8px" border="0">
-            <thead>
-                
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    
-                </tr>
-            </thead>
-            <tbody>
-            <!-- row -->
-            <tr>
-            <td>ATVI</td>
-            <td>SOLD</td>
-            <td id ="i11">21.69</td>
-            <td>21.68</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-            </tr>
-            
-            <!-- row -->
-            <tr>
-            <td>ATVI</td>
-            <td>BOUGHT</td>
-            <td>21.79</td>
-            <td>21.89</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-            
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>AAPL</td>
-            <td>SOLD</td>
-            <td>101.17</td>
-            <td>102.67</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-            
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>AAPL</td>
-            <td>BOUGHT</td>
-            <td>103.24</td>
-            <td>105.67</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>MSFT</td>
-            <td>SOLD</td>
-            <td>55.67</td>
-            <td>53.67</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>MSFT</td>
-            <td>BOUGHT</td>
-            <td>55.67</td>
-            <td>53.67</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>CERN</td>
-            <td>SOLD</td>
-            <td>58.67</td>
-            <td>61.29</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>CERN</td>
-            <td>BOUGHT</td>
-            <td>54.67</td>
-            <td>53.67</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>CERN</td>
-            <td>SOLD</td>
-            <td>58.67</td>
-            <td>61.29</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            <!-- row -->
-            <tr>
-            <td>CERN</td>
-            <td>BOUGHT</td>
-            <td>54.67</td>
-            <td>53.67</td>
-            </tr>
-            <tr>
-            <td class="addon">12/17/15</td>
-            <td class="addon">9:37</td>
-            <td class="addon">$3,006,789</td>
-            <td></td>
-           
-            </tr>
-            </tbody>
-        </table>
+                        <div id="register" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1> Sign up </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register"> Go and log in </a>
+								</p>
+                            </form>
+                        </div>
+						
                     </div>
-                    <div class="ratings">
-                        <p class="pull-right"></p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            
-                        </p>
-                    </div>
-                </div>
-
-                <div class="well">
-
-                    <div class="text-right">
-                        <a class="btn btn-success">Create Order</a>
-                    </div>
-
-
-                </div>
-
-            </div>
-
+                </div>  
+            </section>
         </div>
-
-    </div>
-    <!-- /.container -->
-    <?php include "tpl/footer.html" ?>
-    
-
-</body>
-
+    </body>
 </html>

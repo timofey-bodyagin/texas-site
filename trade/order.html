@@ -1,45 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Spot Quoting Trading Platform</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/shop-item.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+<?php $title="SpotQuoting Order System" ?>
+<?php include "tpl/heading.html" ?>
+    
  
 <script>
 $(document).ready(function() {
     $('#orderForm').validator();
 });
 </script>
-<style type="text/css">
-/* Adjust feedback icon position */
-#orderForm .form-control-feedback {
-    right: 15px;
-}
-#orderForm .selectContainer .form-control-feedback {
-    right: 25px;
-}
-</style>
+
 <script>
 // CLEARABLE INPUT
 function tog(v){return v?'addClass':'removeClass';} 
@@ -55,7 +26,15 @@ $(document).on('input', '.clearable', function(){
 // $('.clearable').trigger("input");
 // Uncomment the line above if you pre-fill values from LS or server
 </script>
-
+<style type="text/css">
+/* Adjust feedback icon position */
+#orderForm .form-control-feedback {
+    right: 15px;
+}
+#orderForm .selectContainer .form-control-feedback {
+    right: 25px;
+}
+</style>
 </head>
 
 <body>
@@ -148,14 +127,14 @@ $(document).on('input', '.clearable', function(){
         <div class="row">
             <div class="col-xs-4 selectContainer">
                 <label class="control-label">Shares</label>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
                 <input class="clearable form-control" type="text" name="shares" value="" placeholder="" required />
                 <div class="help-block with-errors"></div>
             </div>
 
             <div class="col-xs-4 selectContainer">
                 <label class="control-label">Price</label>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
                 <input class="clearable form-control" type="text" name="" value="" placeholder="" />
             </div>
             <div class="col-xs-4 selectContainer">

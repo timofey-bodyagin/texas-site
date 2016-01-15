@@ -9,23 +9,41 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Trading Platform</a>
+                <a class="navbar-brand" href="trade.html">Trading Platform</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Trade Data</a>
+                    <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Trading Information<span class="caret"></span></a>
+                       <ul class="dropdown-menu">
+                         <li><a href="spot.html">Spot Quotes Data</a></li>
+                         <li role="separator" class="divider"></li>
+                         <li><a href="market_depth.html">Market Depth Data</a></li>
+                         <li role="separator" class="divider"></li>
+                         <li><a href="trade.html">Trade Data</a></li>
+                       </ul>
                     </li>
-                    <li>
-                        <a href="order.html">Orders</a>
+                    
+                    <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Orders<span class="caret"></span></a>
+                       <ul class="dropdown-menu">
+                         <li><a href="order.html">Create Order</a></li>
+                         <li role="separator" class="divider"></li>
+                         <li><a href="order_list.html">List Orders</a></li>
+                         <li role="separator" class="divider"></li>
+                         <li><a href="portfolio.html">Portfolio</a></li>
+                         <li role="separator" class="divider"></li>
+                         <li><a href="events.html">Events</a></li>
+                       </ul>
                     </li>
+
                     <li>
-                        <a href="#">Account</a>
+                        <a href="account.html">Account</a>
                     </li>
                    
                     <li>
-                        <a href="#">Logout</a>
+                        <a href="order.html">Logout</a>
                     </li>
                     
                 </ul>

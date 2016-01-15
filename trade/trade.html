@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Spot Quoting Trading Platform</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-item.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery.js"></script>
+
+</head>
+<script>
+$( document ).ready(function() {
+    var cell = document.getElementById("i11");
+    var z = cell.innerHTML;
+    for(var k = 0; k < 130; k++) {
+    cell.innerHTML = '';
+    cell.innerHTML = (parseFloat(z) + k).toFixed(2);
+
+};
+
+
+});
+
+</script>
+<body>
+
+    <?php include "tpl/navigation.html" ?>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <?php include "tpl/left_menu.html" ?>
+
+            <div class="col-md-9">
+
+                <div class="thumbnail">
+                    <img class="img-responsive" src="../images/line.png" alt="">
+                    <div class="caption-full">
+                        <h4 class="pull-right"></h4>
+                        <h4><a href="#">Symbol</a>
+                        </h4>
+            <table id="intab" width="100%" cellpadding="8px" border="0">
+            <thead>
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            <!-- row -->
+            <tr>
+            <td>ATVI</td>
+            <td>SOLD</td>
+            <td id ="i11">21.69</td>
+            <td>21.68</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+            </tr>
+            
+            <!-- row -->
+            <tr>
+            <td>ATVI</td>
+            <td>BOUGHT</td>
+            <td>21.79</td>
+            <td>21.89</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+            
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>AAPL</td>
+            <td>SOLD</td>
+            <td>101.17</td>
+            <td>102.67</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+            
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>AAPL</td>
+            <td>BOUGHT</td>
+            <td>103.24</td>
+            <td>105.67</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>MSFT</td>
+            <td>SOLD</td>
+            <td>55.67</td>
+            <td>53.67</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>MSFT</td>
+            <td>BOUGHT</td>
+            <td>55.67</td>
+            <td>53.67</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>CERN</td>
+            <td>SOLD</td>
+            <td>58.67</td>
+            <td>61.29</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>CERN</td>
+            <td>BOUGHT</td>
+            <td>54.67</td>
+            <td>53.67</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>CERN</td>
+            <td>SOLD</td>
+            <td>58.67</td>
+            <td>61.29</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            <!-- row -->
+            <tr>
+            <td>CERN</td>
+            <td>BOUGHT</td>
+            <td>54.67</td>
+            <td>53.67</td>
+            </tr>
+            <tr>
+            <td class="addon">12/17/15</td>
+            <td class="addon">9:37</td>
+            <td class="addon">$3,006,789</td>
+            <td></td>
+           
+            </tr>
+            </tbody>
+        </table>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right"></p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="well">
+
+                    <div class="text-right">
+                        <a class="btn btn-success">Create Order</a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+    <?php include "tpl/footer.html" ?>
+    
+
+</body>
+
+</html>

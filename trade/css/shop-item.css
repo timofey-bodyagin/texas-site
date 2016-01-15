@@ -95,6 +95,12 @@ footer {
 
 color:white;
 }
+
+.dropdown-menu {
+
+background-color: #C0C0C0!important;
+
+}
 .control-label-big {
 
     font-weight: bold;
