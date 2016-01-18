@@ -18,30 +18,113 @@
 
         <div class="row">
 
-            <?php include "tpl/left_menu_order.html" ?>
+           <div class="col-md-3">
+            <p class="lead">Orders
+                <div class="list-group">
+                <a href="order.html" class="list-group-item">Create Order
+                <a href="order_list.html" class="list-group-item">List Orders
+                <a href="portfolio.html" class="list-group-item active">Portfolio</a>
+                <a href="events.html" class="list-group-item">Events</a>
+                </div>
+            </div>
 
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="../images/line_green.png" alt="">
+                    <img class="img-responsive" src="../images/line_green_port.png" alt="">
                     <div class="caption-full">
                         <h4 class="pull-right"></h4>
                         <h4><a href="#">Account Number #234it</a>
                         </h4>
-    <div><h2>Portfolio</h2></div>
+                    <table id="market" width="100%" cellspacing="18px" border="0">
+            
+                    <thead>
+               
+                    <tr>
+                    <td class="left head-symbol">Symbol</td>
+                    <td class="head-portfolio">Last Trade Price</td>
+                    <td class="head-portfolio">Number of Shares</td>
+                    <td class="head-portfolio">Position Value</td>
                     
-                    <div class="ratings">
-                        <p class="pull-right">order</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            
-                        </p>
-                    </div>
+                    </tr>
+
+                    </thead>
+                    <tbody id="market_body" >
+                    <!-- row -->
+                    <tr>
+                    <td class="left">AMZN</td>
+                    <td>321.12</td>
+                    <td>500</td>
+                    <td>15100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">AAPL</td>
+                    <td>301.12</td>
+                    <td>100</td>
+                    <td>30100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">GOOGL</td>
+                    <td>601.12</td>
+                    <td>100</td>
+                    <td>60100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">INTL</td>
+                    <td>81.12</td>
+                    <td>1100</td>
+                    <td>95100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">CSCO</td>
+                    <td>101.12</td>
+                    <td>700</td>
+                    <td>70100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">CERN</td>
+                    <td>37.12</td>
+                    <td>100</td>
+                    <td>30100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">GOOGL</td>
+                    <td>601.12</td>
+                    <td>100</td>
+                    <td>60100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">AVGO</td>
+                    <td>103.12</td>
+                    <td>100</td>
+                    <td>100100.00</td>
+                    </tr>
+                    
+                    </tbody>
+                    </table>
+                    
                 </div>
+       <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-9 bn">
+      <h5 class="text-right">Total:</h5>
+      <h5 class="text-right">Navigation</h5>
+         <div class="btn-group pull-right">
+         <button type="button" class="btn btn-primary" style="height:30px;" onclick="Previous()">Prev</button>
+         <button type="button" class="btn btn-primary" onclick="Next()" style="height:30px;">Next</button>
+    <p>kjkhkj
+     </div> 
+     
+      </div>          
+     </div>
 
                 <div class="well">
 
