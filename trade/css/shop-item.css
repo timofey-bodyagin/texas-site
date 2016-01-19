@@ -179,6 +179,36 @@ width:15%;
 width:25%;
 
 }
+.head-t {
+  
+width:15%;
+text-align: left!important;
+
+}
+.head-m {
+  
+width:50%;
+text-align: left!important;
+
+}
+.head-v {
+  
+width:15%;
+text-align: left!important;
+
+}
+.head-d {
+  
+width:10%;
+text-align: left!important;
+
+}
+.head-t {
+  
+width:10%;
+text-align: left!important;
+
+}
 .bn {
 //border: 2px solid #333;
 //padding:2px;

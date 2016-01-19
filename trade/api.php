@@ -36,7 +36,7 @@ class MDEntry {
 				if ( sizeof($dummy) != 2 ) {
 					throw new Exception("Quote data corrupted: " . $this->Symbol);
 				}
-				$quotes[] = array(sprintf("%0.2f", $dummy[0]), $dummy[1]);
+				$quotes[] = array(sprintf("%0.2f", rand(1,5)+$dummy[0]), rand(1,2)+$dummy[1]);
 				if ( sizeof($quotes) >= $maxLevels ) {
 					break;
 				}
@@ -71,7 +71,7 @@ function main() {
 	}
 	
 	if ( isset($_GET['timestamp']) ) {
-		$sth = $dbh->prepare('SELECT * FROM `Quotes` WHERE `Timestamp` > ?');
+		$sth = $dbh->prepare('SELECT * FROM `Quotes` ');
 		$sth->execute(array($_GET['timestamp']));
 	} else {
 		$sth = $dbh->prepare('SELECT * FROM `Quotes`');
