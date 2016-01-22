@@ -21,41 +21,41 @@
            <div class="col-md-3">
             <p class="lead">Orders
                 <div class="list-group">
-                <a href="order.html" class="list-group-item">Create Order
-                <a href="order_list.html" class="list-group-item">List Orders
-                <a href="portfolio.html" class="list-group-item active">Portfolio</a>
-                <a href="events.html" class="list-group-item">Events</a>
+                <a href="order.html" class="list-group-item zz">Create Order
+                <a href="order_list.html" class="list-group-item zz">Open Orders
+                <a href="portfolio.html" class="list-group-item za active">Portfolio</a>
+                <a href="events.html" class="list-group-item zz">Events</a>
                 </div>
             </div>
 
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="../images/line_green_port.png" alt="">
+                    
                     <div class="caption-full">
                         <h4 class="pull-right"></h4>
-                        <h4><a href="#">Account Number #234it</a>
+                        <h4><a href="#">Acc. #4565433234</a>
                         </h4>
                     <table>
                     <thead>
                     <tr>
-                    <td>Balance:
+                    <td class="wt">Balance:
                     </td>
-                    <td>
+                    <td class="pers">
                      102450   
                     </td>    
                     </tr>
                     <tr>
-                    <td class="left">Equity :
+                    <td class="left wt">Equity :
                     </td>
-                    <td>
+                    <td class="pers">
                      52450   
                     </td>    
                     </tr>
                     <tr>
-                    <td>Liability:
+                    <td class="wt">Liability:
                     </td>
-                    <td>
+                    <td class="pers">
                      ---------   
                     </td>    
                     </tr>
@@ -68,10 +68,10 @@
                     <thead>
                
                     <tr>
-                    <td class="left head-symbol">Symbol</td>
-                    <td class="head-portfolio">Last Trade Price</td>
-                    <td class="head-portfolio">Number of Shares</td>
-                    <td class="head-portfolio">Position Value</td>
+                    <td class="left head-symbol wt">Symbol</td>
+                    <td class="head-portfolio wt">Last Trade Price</td>
+                    <td class="head-portfolio wt">Number of Shares</td>
+                    <td class="head-portfolio wt">Position Value</td>
                     
                     </tr>
 
@@ -133,34 +133,47 @@
                     <td>100</td>
                     <td>100100.00</td>
                     </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">AVGO</td>
+                    <td>103.12</td>
+                    <td>100</td>
+                    <td>100100.00</td>
+                    </tr>
+                    <!-- row -->
+                    <tr>
+                    <td class="left">AVGO</td>
+                    <td>103.12</td>
+                    <td>100</td>
+                    <td>100100.00</td>
+                    </tr>
                     
                     </tbody>
                     </table>
                     
-                </div>
+                
        <div class="row">
       <div class="col-md-3">
       </div>
       <div class="col-md-9 bn">
-      
-      <h5 class="text-right">Navigation</h5>
+<p>
          <div class="btn-group pull-right">
-         <button type="button" class="btn btn-primary" style="height:30px;" onclick="Previous()">Prev</button>
-         <button type="button" class="btn btn-primary" onclick="Next()" style="height:30px;">Next</button>
-    <p>kjkhkj
-     </div> 
-     
+         <button type="button" class="btn btn-pn" style="height:30px;" onclick="Previous()">Prev</button>
+         <button type="button" class="btn btn-pn" onclick="Next()" style="height:30px;">Next</button>
+    
+         </div> 
       </div>          
-     </div>
-
-                <div class="well">
+             </div>
+                    
+                
+                
 
                     <div class="text-center">
-                        <a class="btn btn-success">Visit events</a>
+                        <a class="btn btn-success">Create Order</a>
                     </div>
 
 
-                </div>
+                
 
             </div>
 
@@ -170,7 +183,8 @@
     <!-- /.container -->
 
     <?php include "tpl/footer.html" ?>
-
+</div>
+        </div>
 </body>
 
 </html>

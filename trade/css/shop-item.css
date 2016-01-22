@@ -7,6 +7,7 @@
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 background-color: #282828 ;
+
 }
 
 .thumbnail img {
@@ -30,6 +31,7 @@ background-color: #282828 ;
 
 footer {
     margin: 50px 0;
+    font-size: 11px;
 }
 table {
 
@@ -42,14 +44,45 @@ h5 {
 color: white;
 
 }
+h4 a {
+
+  color: #33CC99;
+}
+
+
 table thead {
 
 background-color: black;
 color: #FF6600;
 font-weight: bold;
+font-size: 15px;
+
+}
+.wt {
+
+background-color: black;
+color: white!important;
+font-weight: normal;
+font-size: 15px;
 
 }
 
+.md {
+
+background-color: black;
+color: #33CC99!important;
+font-weight: normal;
+font-size: 15px;
+
+}
+.pers {
+
+background-color: black;
+color: #66CCCC!important;
+font-weight: bolder;
+font-size: 16px;
+
+}
 table  td {
 
 text-align: right;
@@ -64,13 +97,26 @@ text-align: left!important;
 }
 
 td {
-    padding: 2px; 
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-right: 15px;
     border: 1px solid #333;
-    height: 25px;
+    height: 20px!important;
+}
+td.one_level {
+padding-top: 4px!important;
+padding-right: 15px;
 }
 td.addon  {
 
 color: gray!important;
+height: 20px!important;
+
+}
+p.addon  {
+
+color: gray!important;
+font-size: 12px;
 
 }
 .col-md-9 {
@@ -85,14 +131,25 @@ background-color: #282828 ;
 
     color: #FF6600;
 }
+.leadtd {
+
+    color: #33CC99;
+    font-size: 22px;
+}
+
+.leadsp  {
+color: #FF6600!important;
+font-size: 20px;
+}
+
 form label {
 color: white;
 
 }
 
-footer {
+#footer {
   
-
+height: 120px;
 color:white;
 }
 
@@ -104,13 +161,14 @@ background-color: #C0C0C0!important;
 .control-label-big {
 
     font-weight: bold;
-    font-size: 21px;
+    font-size: 19px;
+    color:#FF6600;
 }
 .control-label-bigb {
 
     font-weight: bold;
-    font-size: 21px;
-    color:#337AB7;
+    font-size: 19px;
+    color:#FF6600;
 }
 
 .clearable{
@@ -128,6 +186,7 @@ background-color: #C0C0C0!important;
   
 width:10%;
 
+
 }
 .head-1 {
   
@@ -141,12 +200,12 @@ width:10%;
 }
 .head-price {
   
-width:10%;
+width:11%;
 
 }
 .head-size {
   
-width:10%;
+width:9%;
 
 }
 .head-date {
@@ -215,3 +274,60 @@ text-align: left!important;
 background-color: transparent;
 }
 
+.btn {
+
+  background-color: #404040;
+  border-color: black;
+  color:#fff!important;
+}
+
+.btn-success,
+.btn-success:active,
+.btn-success:visited,
+.btn-success:focus,
+.btn-success.active,
+.btn-pn,
+.btn-pn:active,
+.btn-pn.active,
+.btn-pn:visited,
+.btn-pn:focus,
+ {
+    background-color: #404040;
+    border-color: black;
+    font-color:#ffffff!important;
+    color:#fff!important;
+}
+
+.btn-success:hover,
+.btn-pn:hover
+{
+
+background-color: #404550;
+}
+
+.hl {
+
+  background-color: #404040;
+  border-color: black;
+}
+
+.thumbnail {
+
+border-color: transparent;
+
+}
+.zz {
+
+  background-color: #A0A0A0!important;
+
+  color:#000000!important;
+  
+}
+.za {
+
+  background-color: #303030!important;
+  border-width: 0px;
+
+  color:#ffffff!important;
+  
+}

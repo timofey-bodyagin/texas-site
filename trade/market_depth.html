@@ -41,18 +41,18 @@ $(document).ready(MDAppLoad);
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Trading Information</p>
-                <div class="list-group">
-                    <a href="spot.html" class="list-group-item">Spot Quotes Data</a>
-                    <a href="market_depth.html" class="list-group-item active">Market Depth Data</a>
-                    <a href="trade.html" class="list-group-item">Trading Data</a>
+                <p class="leadtd">Trading Information</p>
+                <div class="list-group" >
+                    <a href="spot.html" class="list-group-item zz active">Spot Quotes</a>
+                    <a href="market_depth.html" class="list-group-item za">Market Depth Data</a>
+                    <a href="trade.html" class="list-group-item zz ">Daily Activity</a>
                 </div>
             </div>
 
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="../images/line.png" alt="">
+                    
                     <div class="caption-full">
                         <h4 class="pull-right"></h4>
                         <h4><a href="#">Market Depth Data</a></h4>
@@ -62,15 +62,15 @@ $(document).ready(MDAppLoad);
             <thead>
                
                 <tr>
-                    <td class="left head-symbol">Symbol</td>
-                    <td class="head-2">-$.02</td>
-                    <td class="head-1">-$.01</td>
-                    <td class="head-size">Bid Size</td>
-                    <td class="head-price">Bid Price</td>
-                    <td class="head-price">Offer Price</td>
-                    <td class="head-size">Offer Size</td>
-                    <td class="head-1">+$.01</td>
-                    <td class="head-2">+$.02</td>
+                    <td class="left head-symbol md">Symbol</td>
+                    <td class="head-2 md">-$.02</td>
+                    <td class="head-1 md">-$.01</td>
+                    <td class="head-size md">Bid Size</td>
+                    <td class="head-price md">Bid Price</td>
+                    <td class="head-price md">Offer Price</td>
+                    <td class="head-size md">Offer Size</td>
+                    <td class="head-1 md">+$.01</td>
+                    <td class="head-2 md">+$.02</td>
                     
                 </tr>
             </thead>
@@ -80,35 +80,24 @@ $(document).ready(MDAppLoad);
       <div class="col-md-3">
       </div>
       <div class="col-md-9 bn">
-      <h5 class="text-right">Navigation</h5>
+      <p>
          <div class="btn-group pull-right">
-         <button type="button" class="btn btn-primary" style="height:30px;" onclick="Previous()">Prev</button>
-         <button type="button" class="btn btn-primary" onclick="Next()" style="height:30px;">Next</button>
+         <button type="button" class="btn btn-pn" style="height:30px;" onclick="Previous()">Prev</button>
+         <button type="button" class="btn btn-pn" onclick="Next()" style="height:30px;">Next</button>
     
          </div> 
       </div>          
-     </div>
-                    <div class="ratings">
-                        <p class="pull-right"></p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            
-                        </p>
-                    </div>
-                </div>
+             </div>
+                    
+                
+                
 
-                <div class="well">
-
-                    <div class="text-right">
+                    <div class="text-center">
                         <a class="btn btn-success">Create Order</a>
                     </div>
 
 
-                </div>
+                
 
             </div>
 
@@ -118,7 +107,8 @@ $(document).ready(MDAppLoad);
     <!-- /.container -->
 
     <?php include "tpl/footer.html" ?>
-
+</div>
+        </div>
 </body>
 
 </html>

@@ -108,14 +108,14 @@ function MDTableRow(/*Integer*/index) {
 	this.index = index;
 	this.tr = document.createElement("tr");
 	this.td_symbol = this.addCell("left");
-	this.td_bidSize2 = this.addCell();
-	this.td_bidSize1 = this.addCell();
+	this.td_bidSize2 = this.addCell("hl");
+	this.td_bidSize1 = this.addCell("hl");
 	this.td_bidSize0 = this.addCell();
 	this.td_bidPrice0 = this.addCell();
 	this.td_askPrice0 = this.addCell();
 	this.td_askSize0 = this.addCell();
-	this.td_askSize1 = this.addCell();
-	this.td_askSize2 = this.addCell();
+	this.td_askSize1 = this.addCell("hl");
+	this.td_askSize2 = this.addCell("hl");
 }
 
 MDTableRow.prototype.addCell = function(/*String*/cssClassName) {
@@ -143,17 +143,17 @@ MDTableRow.prototype.update = function(/*MDEntry*/entry) {
 	if ( typeof(entry) == "undefined" ) {
 		throw new Error(this.index, "Illegal argument exception");
 	}
-	var doll = "$";
+	var doll ="$";
 	this.entry = entry;
 	this.setCellText(this.td_symbol, entry.getSymbol());
 	this.setCellText(this.td_bidSize2, entry.getBidSize(2));
-	this.setCellText(this.td_bidSize1, entry.getBidSize(1));
+	this.setCellText(this.td_bidSize1, doll.concat(entry.getBidPrice(0)));
 	this.setCellText(this.td_bidSize0, entry.getBidSize(0));
 	this.setCellText(this.td_bidPrice0, doll.concat(entry.getBidPrice(0)));
 	this.setCellText(this.td_askPrice0, doll.concat(entry.getAskPrice(0)));
 	this.setCellText(this.td_askSize0, entry.getAskSize(0));
 	this.setCellText(this.td_askSize1, entry.getAskSize(1));
-	this.setCellText(this.td_askSize2, entry.getAskSize(2));
+	this.setCellText(this.td_askSize2, doll.concat(entry.getAskPrice(0)));
 }
 
 MDTableRow.prototype.setCellText = function(/*DOMElement*/td_cell, /*String*/text) {
