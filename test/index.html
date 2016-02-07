@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" href="https://spotquoting.com/wp-content/themes/Avada/assets/images/favicon.png" type="image/x-icon">
+        <title>Spot Quote</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Sergey" >
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Template CSS Files
+        ================================================== -->
+        <!-- Twitter Bootstrs CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Ionicons Fonts Css -->
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- Hero area slider css-->
+        <link rel="stylesheet" href="css/slider.css">
+        <!-- owl craousel css -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- template main css file -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- responsive css -->
+        <link rel="stylesheet" href="css/responsive.css">
+        
+        <!-- Template Javascript Files
+        ================================================== -->
+        <!-- modernizr js -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- jquery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- owl carouserl js -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- bootstrap js -->
+
+        <script src="js/bootstrap.min.js"></script>
+        <!-- wow js -->
+        <script src="js/wow.min.js"></script>
+        <!-- slider js -->
+        <script src="js/slider.js"></script>
+        <script src="js/jquery.fancybox.js"></script>
+        <!-- template main js -->
+        <script src="js/main.js"></script>
+        
+<!-- ticker -->
+
+<script>
+		(function($) {
+			$.fn.jStockTicker = function(options) {
+				if (typeof (options) == 'undefined') {
+					options = {};
+				}
+				var settings = $.extend( {}, $.fn.jStockTicker.defaults, options);
+				var $ticker = $(this);
+				var $wrap = null;
+				settings.tickerID = $ticker[0].id;
+				$.fn.jStockTicker.settings[settings.tickerID] = {};
+ 
+				if ($ticker.parent().get(0).className != 'wrap') {
+					$wrap = $ticker.wrap("<div class='wrap'></div>");
+				}
+ 
+				var $tickerContainer = null;
+				if ($ticker.parent().parent().get(0).className != 'container') {
+					$tickerContainer = $ticker.parent().wrap(
+							"<div class='container'></div>");
+				}
+				
+				var node = $ticker[0].firstChild;
+				var next;
+				while(node) {
+					next = node.nextSibling;
+					if(node.nodeType == 3) {
+						$ticker[0].removeChild(node);
+					}
+					node = next;
+				}
+				
+				var shiftLeftAt = $ticker.children().get(0).offsetWidth;
+				$.fn.jStockTicker.settings[settings.tickerID].shiftLeftAt = shiftLeftAt;
+				$.fn.jStockTicker.settings[settings.tickerID].left = 0;
+				$.fn.jStockTicker.settings[settings.tickerID].runid = null;
+				$ticker.width(2 * screen.availWidth);
+				
+				function startTicker() {
+					stopTicker();
+					
+					var params = $.fn.jStockTicker.settings[settings.tickerID]; 
+					params.left -= settings.speed;
+					if(params.left <= params.shiftLeftAt * -1) {
+						params.left = 0;
+						$ticker.append($ticker.children().get(0));
+						params.shiftLeftAt = $ticker.children().get(0).offsetWidth;
+					}
+					
+					$ticker.css('left', params.left + 'px');
+					params.runId = setTimeout(arguments.callee, settings.interval);
+					
+					$.fn.jStockTicker.settings[settings.tickerID] = params;
+				}
+				
+				function stopTicker() {
+					var params = $.fn.jStockTicker.settings[settings.tickerID];
+					if (params.runId)
+						clearTimeout(params.runId);
+					
+					params.runId = null;
+					$.fn.jStockTicker.settings[settings.tickerID] = params;
+				}
+				
+				function updateTicker() {			
+					stopTicker();
+					startTicker();
+				}
+				
+				$ticker.hover(stopTicker,startTicker);		
+				startTicker();
+			};
+ 
+			$.fn.jStockTicker.settings = {};
+			$.fn.jStockTicker.defaults = {
+				tickerID :null,
+				url :null,
+				speed :1,
+				interval :20
+			};
+		})(jQuery);
+
+</script>
+
+<script>
+
+$(window).load(function () {
+            StockPriceTicker();
+            setInterval(function() {StockPriceTicker();} , 60000);
+        });
+        function StockPriceTicker() {
+            var Symbol = "", CompName = "", Price = "", ChnageInPrice = "", PercentChnageInPrice = ""; 
+            var CNames = "QQQ,SPY,GPRO,TWTR,INTC,FB,TSLA,GOOG,AAPL";
+            var flickerAPI = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22" + CNames + "%22)&env=store://datatables.org/alltableswithkeys";
+            var StockTickerHTML = "";
+            
+            var StockTickerXML = $.get(flickerAPI, function(xml) {
+                $(xml).find("quote").each(function () {
+                    Symbol = $(this).attr("symbol");
+                    $(this).find("Name").each(function () {
+                        CompName = $(this).text();
+                    });
+                    $(this).find("LastTradePriceOnly").each(function () {
+                        Price = $(this).text();
+                    });
+                    $(this).find("Change").each(function () {
+                        ChnageInPrice = $(this).text();
+                    });
+                    $(this).find("PercentChange").each(function () {
+                        PercentChnageInPrice = $(this).text();
+                    });
+                    
+                    var PriceClass = "GreenText", PriceIcon="up_green";
+                    if(parseFloat(ChnageInPrice) < 0) { PriceClass = "RedText"; PriceIcon="down_red"; }
+                    StockTickerHTML = StockTickerHTML + "<span class='" + PriceClass + "'>";
+                    StockTickerHTML = StockTickerHTML + "<span class='quote'>" + " " + Symbol + "</span> ";
+                    
+                    StockTickerHTML = StockTickerHTML + parseFloat(Price).toFixed(2) + " ";
+                    StockTickerHTML = StockTickerHTML + "<span class='" + PriceIcon + "'></span>" + parseFloat(Math.abs(ChnageInPrice)).toFixed(2) + " (";
+                    StockTickerHTML = StockTickerHTML + parseFloat( Math.abs(PercentChnageInPrice.split('%')[0])).toFixed(2) + "%)</span>";
+                });
+				
+                $("#dvStockTicker").html(StockTickerHTML);
+                $("#dvStockTicker").jStockTicker({interval: 30, speed: 2});
+            });
+        }
+</script> 
+ 
+<script>      
+ //carousels
+    $(document).ready(function() {
+     
+      var time = 6; // time in seconds
+     
+      var $progressBar,
+          $bar, 
+          $elem, 
+          isPause, 
+          tick,
+          percentTime;
+     
+        //Init the carousel
+        $("#owl-demo1").owlCarousel({
+          slideSpeed : 500,
+          paginationSpeed : 500,
+          singleItem : true,
+          afterInit : progressBar,
+          afterMove : moved,
+          startDragging : pauseOnDragging
+        });
+     
+        //Init progressBar where elem is $("#owl-demo")
+        function progressBar(elem){
+          $elem = elem;
+          //build progress bar elements
+          buildProgressBar();
+          //start counting
+          start();
+        }
+     
+        //create div#progressBar and div#bar then prepend to $("#owl-demo")
+        function buildProgressBar(){
+          $progressBar = $("<div>",{
+            id:"progressBar"
+          });
+          $bar = $("<div>",{
+            id:"bar"
+          });
+          $progressBar.append($bar).prependTo($elem);
+        }
+     
+        function start() {
+          //reset timer
+          percentTime = 0;
+          isPause = false;
+          //run interval every 0.01 second
+          tick = setInterval(interval, 10);
+        };
+     
+        function interval() {
+          if(isPause === false){
+            percentTime += 1 / time;
+            $bar.css({
+               width: percentTime+"%"
+             });
+            //if percentTime is equal or greater than 100
+            if(percentTime >= 100){
+              //slide to next item 
+              $elem.trigger('owl.next')
+            }
+          }
+        }
+     
+        //pause while dragging 
+        function pauseOnDragging(){
+          isPause = true;
+        }
+     
+        //moved callback
+        function moved(){
+          //clear interval
+          clearTimeout(tick);
+          //start again
+          start();
+        }
+     
+        //pause on mouseover 
+        $elem.on('mouseover',function(){
+        isPause = true;
+        })
+        $elem.on('mouseout',function(){
+        isPause = false;
+        })
+     
+    });	
+	
+	
+	    $(document).ready(function() {
+     
+      var time = 7; // time in seconds
+     
+      var $progressBar,
+          $bar, 
+          $elem, 
+          isPause, 
+          tick,
+          percentTime;
+     
+        //Init the carousel
+        $("#owl-demo2").owlCarousel({
+          slideSpeed : 500,
+          paginationSpeed : 500,
+          singleItem : true,
+          afterInit : progressBar,
+          afterMove : moved,
+          startDragging : pauseOnDragging
+        });
+     
+        //Init progressBar where elem is $("#owl-demo")
+        function progressBar(elem){
+          $elem = elem;
+          //build progress bar elements
+          buildProgressBar();
+          //start counting
+          start();
+        }
+     
+        //create div#progressBar and div#bar then prepend to $("#owl-demo")
+        function buildProgressBar(){
+          $progressBar = $("<div>",{
+            id:"progressBar1"
+          });
+          $bar = $("<div>",{
+            id:"bar1"
+          });
+          $progressBar.append($bar).prependTo($elem);
+        }
+     
+        function start() {
+          //reset timer
+          percentTime = 0;
+          isPause = false;
+          //run interval every 0.01 second
+          tick = setInterval(interval, 10);
+        };
+     
+        function interval() {
+          if(isPause === false){
+            percentTime += 1 / time;
+            $bar.css({
+               width: percentTime+"%"
+             });
+            //if percentTime is equal or greater than 100
+            if(percentTime >= 100){
+              //slide to next item 
+              $elem.trigger('owl.next')
+            }
+          }
+        }
+     
+        //pause while dragging 
+        function pauseOnDragging(){
+          isPause = true;
+        }
+     
+        //moved callback
+        function moved(){
+          //clear interval
+          clearTimeout(tick);
+          //start again
+          start();
+        }
+     
+        //pause on mouseover 
+        $elem.on('mouseover',function(){
+        isPause = true;
+        })
+        $elem.on('mouseout',function(){
+        isPause = false;
+        })
+     
+    });	       
+</script>       
+    </head>
+    <body>
+        <!--
+        ==================================================
+        Header Section Start
+        ================================================== -->
+        <header id="top-bar" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <!-- /responsive nav button -->
+                    
+                    <!-- logo -->
+                    <div class="navbar-brand">
+                        <a href="/" >
+                            <img src="images/logo.png" alt="">
+                        </a>
+                    </div>
+                    <!-- /logo -->
+                </div>
+                <!-- main menu -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <div class="main-menu">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="active" href="/" >Home</a>
+                            </li>
+                            <li><a href="about.html">Who We Are</a></li>
+                            <li><a href="patents.html">Patent Portfolio</a></li>
+                            <li><a href="management.html">Management</a></li>
+                            <li><a href="finance.html">Trading Platform</a></li>
+                            
+                            <li><a href="contact.html">Contact US</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /main nav -->
+            </div>
+        </header>
+        <section id="ticker">
+                <div class="container">
+                    <div class="row row1">
+                        <div class="col-md-6 col-sm-6 col1" style="width: 100%; padding: 0;">
+							  <div id="StockTickerContainer" style="height: 45px; line-height: 42px; overflow: hidden; background: white" style="width:auto">
+									<div id='dvStockTicker' class='stockTicker' >
+									</div>
+							  </div>
+						</div>
+					</div>
+		</section>
+        <!--
+        
+            ==================================================
+            Slider Section Start
+            ================================================== -->
+				
+            <section id="about">
+                <div class="container">
+                    <div class="row row1">
+                        <div class="col-md-6 col-sm-6 col1">
+						
+                            <div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                <img src="images/fl1.jpg" alt="">
+                            </div>
+							
+							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                             
+								<div id="owl-demo1" class="owl-carousel owl-theme">
+								 
+								  <div class="item"><a href="one-cent-market.html"><img src="images/gal1-slide1.png" alt=""></a></div>
+								  <div class="item"><a href="hide-side-order.html"><img src="images/gal1-slide2.png" alt=""></a></div>
+								  <div class="item"><a href="spot-call-market.html"><img src="images/gal1-slide3.png" alt=""></a></div>
+								 
+								</div>
+
+
+                            </div>
+							
+							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                <a href="sam-balabon.html"><img alt="" src="images/sam.png"></a>
+                            </div>
+							
+                        </div>
+                        <div class="col-md-6 col-sm-6 col1">
+						
+							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+
+                                <div id="owl-demo2" class="owl-carousel owl-theme">
+								 
+								  <div class="item"><a href="mark-cuban.html"><img src="images/gal2-slide1.png" alt=""></a></div>
+								  <div class="item"><a href="joe-saluzzi.html"><img src="images/gal2-slide2.png" alt=""></a></div>
+								  <div class="item"><a href="sec-chairman.html"><img src="images/gal2-slide3.png" alt=""></a></div>
+								  <div class="item"><a href="jeffrey-solomon.html"><img src="images/gal2-slide4.png" alt=""></a></div>
+								 
+								</div>
+                            </div>
+                            
+							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                <a href="craig-kravetz.html"><img alt="" src="images/craig.png"></a>
+                            </div>
+							
+							<div class="block block1 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                                <img src="images/fl2.jpg" alt="">
+                            </div>
+							
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- /#about -->
+            
+            <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="col-md-8">
+                        <p class="copyright">Copyright 2015 Spot Quote | All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Social Media -->
+                        <ul class="social">
+                            <li>
+                                <a href="http://wwww.fb.com/" class="Facebook">
+                                    <i class="ion-social-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://wwww.twitter.com/" class="Twitter">
+                                    <i class="ion-social-twitter"></i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </footer> <!-- /#footer -->
+                
+        </body>
+    </html>

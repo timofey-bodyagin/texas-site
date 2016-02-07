@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="sample.css">
+		<link rel="stylesheet" ензу="text/css" href="jquery-ui.css">
+		<title>Spot Quote Market Making Quotes</title>
+		<script src="jquery-1.11.3.js"></script>
+		<script src="jquery-ui.js"></script>
+		<script src="jquery.csv-0.71.js"></script>
+		<script src="sqm-sample.js"></script>
+    	<script>
+	    	String.format = function() {
+	    		var s = arguments[0];
+	    		for (var i = 0; i < arguments.length - 1; i++) {       
+	    			var reg = new RegExp("\\{" + i + "\\}", "gm");             
+	    			s = s.replace(reg, arguments[i + 1]);
+	    		}
+	    		return s;
+	    	}
+    		$(document).ready(SqmOnAppLoad);
+    	</script>
+	</head>
+	<body>
+		<h1>Spot Quote Market Making Quotes</h1>
+		<table class="sqm-main-table">
+			<thead>
+				<tr>
+					<td class="sqm-main-table-top-row-cell" colspan="6">
+						<table width="100%">
+						<tr>
+							<td>Nasdaq 100</td>
+							<td class="sqm-right">Dec 4 9.32 AM</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-symbol">Sym</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-name">Name</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid sqm-right">Bid</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-bid-shares sqm-right">Bid Shares</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask sqm-right">Ask</td>
+					<td class="sqm-main-table-top1-row-cell sqm-header sqm-header-ask-shares sqm-right">Ask Shares</td>
+				</tr>
+			</thead>
+			<tbody id="sqm_table_body">
+			
+			</tbody>
+		</table>
+		
+		<div id="dialog-report" title="Execution report">
+  			<p id="dialog-report-text"></p>
+		</div>
+	</body>
+</html>
