@@ -6,7 +6,7 @@
 }
 body {
   font-family: 'Roboto', sans-serif !important;
-  background: #fff url(https://spotquoting.com/wp-content/uploads/2013/01/29.png);
+  background: #fff url(../images/29.png);
 }
 h1,
 h2,
@@ -99,7 +99,7 @@ a:hover {
 	max-height: 800px;
 }
 #top-bar {
-  background: #fff url(https://spotquoting.com/wp-content/uploads/2013/01/29.png);
+  background: #fff url(../images/29.png);
   color: #fff;
   -webkit-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
@@ -112,7 +112,7 @@ a:hover {
 }
 #top-bar.animated-header {
   padding: 20px 0 0;
-  background: #fff url(https://spotquoting.com/wp-content/uploads/2013/01/29.png);
+  background: #fff url(../images/29.png);
   box-shadow: none;
 }
 #top-bar .main-menu li > a {

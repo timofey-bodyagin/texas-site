@@ -71,7 +71,10 @@ function SqmSampleTableRow(/*Integer*/ index) {
 	
 	this.index = index;
 	this.row = document.createElement("tr");
-	this.row.className = "sqm-main-table-row";
+	if(isEven(index))
+	{ this.row.className = "sqm-main-table-row even"; }
+else
+{ this.row.className = "sqm-main-table-row"; }
 	
 	this.symbol = document.createElement("td");
 	this.symbol.className = cellClass + "sqm-cell-symbol";
@@ -252,7 +255,7 @@ function SqmSample() {
 	this.table = new SqmSampleTable(document.getElementById("sqm_table_body"));
 	this.nameCache = new Object();
 	this.timerID = null;
-	this.delay = 500;
+	this.delay = 250;
 	this.currentSnapshotNumber = 0;
 	this.csvSeparatorChar = ",";
 }
@@ -420,3 +423,6 @@ function SqmNext() {
 function SqmPrevious() {
 	sample.prev();
 }
+var isEven = function(someNumber){
+    return (someNumber%2 == 0) ? true : false;
+};
